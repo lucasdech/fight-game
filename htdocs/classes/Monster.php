@@ -7,18 +7,20 @@ class Monster {
     private $health_points;
     private $attack;
     private $image;
+    private string $weapon;
 
 
-public function __construct(string $name, int $health_points, $attack, $image){
+public function __construct(string $name, int $health_points, $attack, $image, string $weapon){
     $this->name = $name;
     $this->health_points = $health_points;
     $this->attack = $attack;
     $this->image = $image;
+    $this->weapon = $weapon;
 
 }
 
 public function info(){
-    echo $this->name . " " . $this->health_points . " " . $this->attack . " " . $this->image;
+    echo $this->name . " " . $this->health_points . " " . $this->attack . " " . $this->image . " " . $this->weapon;
 }
 
 public function hit($Hero){
@@ -45,6 +47,10 @@ public function hit($Hero){
     public function getImage(){
         return $this->image;
     }
+    public function getWeapon() {
+        return $this->weapon;
+    }
+
 
     // SETTER
     
@@ -63,4 +69,8 @@ public function hit($Hero){
     public function setImage($image){
         $this->image = $image;
     }
+    public function setWeapon($weapon) {
+        $this->weapon = $weapon;
+    }
+
 }

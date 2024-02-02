@@ -25,7 +25,7 @@ class MonstersManager {
 
         foreach ($monsterArray as $keyArray1) {
 
-            $monster = new Monster($keyArray1['name'], $keyArray1['health_points'], $keyArray1['attack'],$keyArray1['image'] );
+            $monster = new Monster($keyArray1['name'], $keyArray1['health_points'], $keyArray1['attack'],$keyArray1['image'], $keyArray1['weapon'] );
             $monster->setId($keyArray1['id']);
             array_push($monsters, $monster);
 
@@ -41,7 +41,7 @@ class MonstersManager {
         $ID_Monster_Select->execute([$id]);
         $MonsterSelect = $ID_Monster_Select->fetch(PDO::FETCH_ASSOC); 
         
-        $Monster = new Monster($MonsterSelect['name'], $MonsterSelect['health_points'], $MonsterSelect['attack'], $MonsterSelect['image']);
+        $Monster = new Monster($MonsterSelect['name'], $MonsterSelect['health_points'], $MonsterSelect['attack'], $MonsterSelect['image'], $MonsterSelect['weapon']);
         $Monster->setId($MonsterSelect['id']);
         return $Monster;
         

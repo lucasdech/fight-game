@@ -30,7 +30,7 @@ class HeroesManager {
         $Heros = [];
 
         foreach ($Heroslist as $Herolist) {
-            $Hero = new Hero($Herolist['name'], $Herolist['health_points'], $Herolist['attack'], $Herolist['image'],);
+            $Hero = new Hero($Herolist['name'], $Herolist['health_points'], $Herolist['attack'], $Herolist['image'],$Herolist['weapon']);
             $Hero->setId($Herolist['id']);
             array_push($Heros, $Hero);
         }
@@ -44,7 +44,7 @@ class HeroesManager {
        $ID_Hero_Select->execute([$id]);
        $HeroSelect = $ID_Hero_Select->fetch(PDO::FETCH_ASSOC); 
        
-       $Hero = new Hero($HeroSelect['name'], $HeroSelect['health_points'], $HeroSelect['attack'], $HeroSelect['image']);
+       $Hero = new Hero($HeroSelect['name'], $HeroSelect['health_points'], $HeroSelect['attack'], $HeroSelect['image'],$HeroSelect['weapon']);
        $Hero->setId($HeroSelect['id']);
        return $Hero;
        
