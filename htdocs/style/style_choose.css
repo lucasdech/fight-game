@@ -1,0 +1,97 @@
+
+body {
+background-size: cover;
+background-image: url(../images/decors-jeu-combat-124.gif);
+background-repeat: no-repeat;
+height: 100vh;
+width: 100vw;
+}
+
+#bloc_selection {
+
+    background-color: rgba(242, 135, 5, 0.462);   
+    border: 2px solid;
+    border-radius: 5px;
+}
+
+#deadpool {
+   /* border: 2px solid;
+   border-radius: 10px; */
+    background-size: cover;
+    width : 200px;
+    height : 200px;
+}
+
+
+#ideadpool_radio {
+    /* border: 2px solid;
+    border-radius: 10px; */
+     background-size: cover;
+    width : 1px;
+    height : 1px;
+}
+
+
+
+#ironman {
+    /* border: 2px solid;
+    border-radius: 10px; */
+     background-size: cover;
+    width : 200px;
+    height : 200px;
+}
+
+
+#ironman_radio {
+    /* border: 2px solid;
+    border-radius: 10px; */
+     background-size: cover;
+    /* width : 1px;
+    height : 1px; */
+}
+input[type="radio"]{
+    display: none;
+}
+input[type="radio"] + img{
+    filter: brightness(60%);
+}
+input[type="radio"]:checked + img {
+    filter: brightness(100%);
+    box-shadow: 10px 10px 10px rgb(255, 0, 0);
+}
+
+#tanos {
+    /* border: 2px solid;
+    border-radius: 10px; */
+     background-size: cover;
+    width : 170px;
+    height : 200px;
+}
+
+
+#bowser {
+    /* border: 2px solid;
+    border-radius: 10px; */
+     background-size: cover;
+    width : 200px;
+    height : 200px;
+}
+
+
+#mechant {
+
+    border: 2px solid;
+   border-radius: 10px;
+     background-size: cover;
+    width : 250px;
+    height : 250px;
+}
+
+
+.hidden {
+    display: none;
+}
+
+* {
+    cursor:url(../images/epe-removebg-preview.png), auto;
+}
