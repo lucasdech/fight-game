@@ -21,8 +21,9 @@ public function info(){
     echo $this->name . " " . $this->health_points . " " . $this->attack . " " . $this->image;
 }
 
-public function hit(){
-    // action pout hit
+public function hit($Hero){
+
+    $Hero->setHP($Hero->getHP() - $this->getAttack());
 }
 
 

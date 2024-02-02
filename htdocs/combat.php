@@ -1,22 +1,18 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-//require_once "./config/debug.php";
+// require_once "./config/debug.php";
 require_once "./config/db.php";
-// include "./config/message.php";
-
-$HeroesManager = new HeroesManager($connexion);
-$heros = $HeroesManager->getHero();
-
-
-$MonstersManager = new MonstersManager($connexion);
-$monsters = $MonstersManager->getmonster();
+include "./config/message.php";
 
 $SelectHeroID = new HeroesManager($connexion);
 $hero = $SelectHeroID->getHeroByID($_POST['hero_id']) ;
 
 $SelectMonsterID = new MonstersManager($connexion);
 $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
+
+$addfight = new CombatManager($connexion);
+$fight = $addfight->fight($hero,$Monster);
 
 ?>
 
@@ -37,6 +33,15 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
         <div class="case1 h-100 col-4">
             <div class="row h-50 align-items-center"> 
                 <h1>action heros</h1>
+
+                    <?php
+                    foreach ($fight['hero'] as $key) {?> 
+                    <div class="bg-success">
+                        <?=$key . "<br>";?>
+                    </div>   
+                <?php } 
+                    ?>
+
             </div>
 
             <!-- COTER GENTIL -->
@@ -52,7 +57,12 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
             </div>
         </div>
 
+        <div class="col-2 H-100 d-flex justify-content-center align-items-center" >
+            <button type="button" id="fight" class="btn btn-danger">Danger</button>
+        </div>
+
         <div class="case2 h-100 col-4">
+
         
                 <!-- COTER MECHANT  -->
             <div class="row h-50  align-items-center"> 
@@ -66,8 +76,18 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                 </div>
             </div>
 
-            <div class="row h-50 align-items-center"> 
-                <h1>action mechant</h1>  
+
+            <div class="row h-50  align-items-center"> 
+                <h1>action mechant</h1>
+
+                <?php
+                foreach ($fight['monster'] as $key) {?> 
+                <div class="bg-danger">
+                    <?=$key . "<br>";?>
+                </div>   
+                <?php } 
+                    ?>
+
             </div>
         </div>
 
