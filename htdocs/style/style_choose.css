@@ -8,7 +8,7 @@ width: 100vw;
 }
 
 #bloc_selection {
-    background-image: url(../images/vs.png);
+    background-image: url(../images/VS_2.png);
     background-position: center;
     background-size: 15%;
     background-repeat: no-repeat;
@@ -71,8 +71,8 @@ input[type="radio"]:checked + img {
     /* border: 2px solid;
     border-radius: 10px; */
      background-size: cover;
-    width : 170px;
-    height : 200px;
+    width : 180px;
+    height : 180px;
 }
 
 
@@ -80,19 +80,10 @@ input[type="radio"]:checked + img {
     /* border: 2px solid;
     border-radius: 10px; */
      background-size: cover;
-    width : 200px;
-    height : 200px;
+    width : 210px;
+    height : 210px;
 }
 
-
-#mechant {
-
-    border: 2px solid;
-   border-radius: 10px;
-     background-size: cover;
-    width : 250px;
-    height : 250px;
-}
 
 
 .hidden {
@@ -101,4 +92,24 @@ input[type="radio"]:checked + img {
 
 * {
     cursor:url(../images/epe-removebg-preview.png), auto;
+}
+
+#bouton_choose {
+    background-image: url(../images/bouton1.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    position: absolute;
+
+}
+
+#bouton_choose:hover{
+    background-image: url(../images/bouton2.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    position: absolute;
 }

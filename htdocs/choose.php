@@ -58,17 +58,17 @@ $monsters = $MonstersManager->getmonster();
 
 
                         <div>
-                            <button class="d-flex flex-column justify-content-end" type="submit"> let's go combat</button>
+                            <button id="bouton_choose" class="m-5 d-flex flex-column justify-content-end" type="submit"></button>
                         </div>
 
                         <div class="m-4 d-flex flex-column">
                             
-                            <label class="" for="contactChoice5">
+                            <label class="mb-5" for="contactChoice5">
                                 <input type="radio" id="contactChoice5" name="monster_id" value="<?=$monsters[0]->getId()?>" />
                                 <img id="bowser" src="./images/<?=$monsters[0]->getImage()?>" width="200px" alt=""> 
                             </label>
                             
-                            <label class="mb-5" for="tanos_radio">
+                            <label class="" for="tanos_radio">
                                 <input type="radio" id="tanos_radio" name="monster_id" value="<?=$monsters[1]->getId()?>" />
                                 <img id="tanos" src="./images/<?=$monsters[1]->getImage()?>" alt="">
                             </label>
