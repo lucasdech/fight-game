@@ -31,7 +31,7 @@ $fight = $addfight->fight($hero,$Monster);
     <section class="combats d-flex justify-content-evenly text-center">
 
         <div class="case1 h-100 col-4">
-            <div class="row h-50  align-items-center"> 
+            <div class="row h-50 align-items-center"> 
                 <h1>action heros</h1>
 
                     <?php
@@ -48,10 +48,10 @@ $fight = $addfight->fight($hero,$Monster);
 
             <div class="row h-50  align-items-center"> 
                 <div class="mb-5">
-                    <p><?=$hero->getName()?></p>
+                    <p class=" text-success fs-3 fw-bold"><?=$hero->getName()?></p>
                     <img id="hero" src="./images/<?=$hero->getURL()?>" width="300px"> 
                     <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHP()?>" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar bg-danger" style="width: <?=$hero->getHP()?>%"><?=$hero->getHP()?> PV</div>
+                        <div class="progress-bar bg-success" style="width: <?=$hero->getHP()?>%"><?=$hero->getHP()?> PV</div>
                     </div>
                 </div>
             </div>
@@ -69,11 +69,13 @@ $fight = $addfight->fight($hero,$Monster);
                 <div class="mt-5">
                 <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar bg-danger" style="width: <?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
-                    </div> 
-                    <p><?=$Monster->getName()?></p>
-                    <img id="mechant" src="./images/<?=$Monster->getImage()?>" width="300px">
+                    </div>
+
+                    <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
+                    <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
                 </div>
             </div>
+
 
             <div class="row h-50  align-items-center"> 
                 <h1>action mechant</h1>

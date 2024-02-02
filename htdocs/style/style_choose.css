@@ -8,8 +8,11 @@ width: 100vw;
 }
 
 #bloc_selection {
-
-    background-color: rgba(242, 135, 5, 0.462);   
+    background-image: url(../images/vs.png);
+    background-position: center;
+    background-size: 15%;
+    background-repeat: no-repeat;
+    background-color: rgba(242, 135, 5, 0.215);   
     border: 2px solid;
     border-radius: 5px;
 }
@@ -32,7 +35,6 @@ width: 100vw;
 }
 
 
-
 #ironman {
     /* border: 2px solid;
     border-radius: 10px; */
@@ -49,15 +51,20 @@ width: 100vw;
     /* width : 1px;
     height : 1px; */
 }
+
 input[type="radio"]{
     display: none;
 }
 input[type="radio"] + img{
     filter: brightness(60%);
+    filter: opacity(0.5);
+    
 }
 input[type="radio"]:checked + img {
     filter: brightness(100%);
-    
+    filter: opacity(1);
+    filter: drop-shadow(5px 5px 30px rgb(255, 191, 0));
+
 }
 
 #tanos {
