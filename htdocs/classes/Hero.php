@@ -21,10 +21,10 @@ class Hero {
         echo $this->URL_image . " " . $this->name . " " . $this->healts_points . " " . $this->attack;
     }
 
-    public function hit(){
-        // action pout hit
-    }
+    public function hit($Monster){
 
+        $Monster->setHealth_points($Monster->getHealth_points() - $this->getAttack());
+    }
     // getter 
 
     public function getId() {

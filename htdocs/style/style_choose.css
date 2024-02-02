@@ -57,7 +57,7 @@ input[type="radio"] + img{
 }
 input[type="radio"]:checked + img {
     filter: brightness(100%);
-    box-shadow: 10px 10px 10px rgb(255, 0, 0);
+    
 }
 
 #tanos {
