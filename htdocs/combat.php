@@ -32,9 +32,8 @@ $fight = $addfight->fight($hero,$Monster);
 
         <div class="case1 h-100 col-4">
             <div class="row h-50 align-items-center"> 
-                <h1>action heros</h1>
-
-                    <?php
+            
+                <?php
                     foreach ($fight['hero'] as $key) {?> 
                     <div class="bg-success">
                         <?=$key . "<br>";?>
@@ -49,7 +48,10 @@ $fight = $addfight->fight($hero,$Monster);
             <div class="row h-50  align-items-center"> 
                 <div class="mb-5">
                     <p class=" text-success fs-3 fw-bold"><?=$hero->getName()?></p>
-                    <img id="hero" src="./images/<?=$hero->getURL()?>" width="300px"> 
+                    <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
+                     <!-- boule de feu -->
+                     <img id="shuriken" class="shurikenHidden shurikenfilter" src="./images/shuriken.png" alt="" width="150px"> 
+                    <!-- boule de feu FIN  -->
                     <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHP()?>" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar bg-success" style="width: <?=$hero->getHP()?>%"><?=$hero->getHP()?> PV</div>
                     </div>
@@ -57,37 +59,40 @@ $fight = $addfight->fight($hero,$Monster);
             </div>
         </div>
 
-        <div class="col-2 H-100 d-flex justify-content-center align-items-center" >
+        <div class=" col-2 H-100 d-flex justify-content-center align-items-center" >
             <button type="button" id="fight" class="btn btn-danger">Danger</button>
+            <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
         </div>
 
         <div class="case2 h-100 col-4">
 
         
                 <!-- COTER MECHANT  -->
-            <div class="row h-50  align-items-center"> 
-                <div class="mt-5">
-                <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar bg-danger" style="width: <?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
-                    </div>
-
-                    <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
-                    <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
-                </div>
-            </div>
-
+                
 
             <div class="row h-50  align-items-center"> 
-                <h1>action mechant</h1>
-
-                <?php
+                    
+                    <?php
                 foreach ($fight['monster'] as $key) {?> 
                 <div class="bg-danger">
                     <?=$key . "<br>";?>
                 </div>   
                 <?php } 
                     ?>
+            </div>
 
+
+        <div class="row h-50  align-items-center"> 
+                <div class="">
+                    <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
+                    <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
+                    <!-- boule de feu -->
+                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/fireballLEFT.png" alt="" width="150px"> 
+                    <!-- boule de feu FIN  -->
+                    <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-danger" style="width: <?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
+                        </div>
+                </div>
             </div>
         </div>
 
