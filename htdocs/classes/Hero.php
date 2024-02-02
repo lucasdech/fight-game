@@ -7,18 +7,19 @@ class Hero {
     private int $healts_points;
     private int $attack;
     private string $URL_image;
+    private string $weapon;
 
-    public function __construct(string $name, int $healts_points, int $attack, string $URL_image)
+    public function __construct(string $name, int $healts_points, int $attack, string $URL_image, string $weapon)
     {
         $this->name = $name;
         $this->healts_points = $healts_points;
         $this->attack = $attack;
         $this->URL_image = $URL_image;
-
+        $this->weapon = $weapon;
     }
 
     public function info(){
-        echo $this->URL_image . " " . $this->name . " " . $this->healts_points . " " . $this->attack;
+        echo $this->URL_image . " " . $this->name . " " . $this->healts_points . " " . $this->attack . " " . $this->weapon;
     }
 
     public function hit($Monster){
@@ -42,7 +43,9 @@ class Hero {
     public function getURL() {
         return $this->URL_image;
     }
-
+    public function getWeapon() {
+        return $this->weapon;
+    }
 
     // setter 
 
@@ -61,5 +64,8 @@ class Hero {
     }
     public function setURL($URL_image){
         $this->URL_image = $URL_image;
+    }
+    public function setWeapon($weapon) {
+        $this->weapon = $weapon;
     }
 }

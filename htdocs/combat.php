@@ -14,6 +14,9 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 $addfight = new CombatManager($connexion);
 $fight = $addfight->fight($hero,$Monster);
 
+// var_dump($hero->getWeapon());
+// die;
+
 ?>
 
 <!DOCTYPE html>
@@ -50,7 +53,7 @@ $fight = $addfight->fight($hero,$Monster);
                     <p class=" text-success fs-3 fw-bold"><?=$hero->getName()?></p>
                     <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
                      <!-- boule de feu -->
-                     <img id="shuriken" class="shurikenHidden shurikenfilter" src="./images/shuriken.png" alt="" width="150px"> 
+                     <img id="shuriken" class="shurikenHidden shurikenfilter" src="./images/<?=$hero->getWeapon()?>" alt="" width="150px"> 
                     <!-- boule de feu FIN  -->
                     <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHP()?>" aria-valuemin="0" aria-valuemax="100">
                         <div class="progress-bar bg-success" style="width: <?=$hero->getHP()?>%"><?=$hero->getHP()?> PV</div>
@@ -87,7 +90,7 @@ $fight = $addfight->fight($hero,$Monster);
                     <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
                     <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
                     <!-- boule de feu -->
-                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/fireballLEFT.png" alt="" width="150px"> 
+                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="150px"> 
                     <!-- boule de feu FIN  -->
                     <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar bg-danger" style="width: <?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
