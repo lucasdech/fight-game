@@ -47,7 +47,7 @@ body {
     top: 650px;
     right: 500px;
     position: absolute;
-    animation-name: drive;
+    animation-name: drive, turn;
     animation-duration: 1.5s;
     animation-direction: normal;
     animation-fill-mode: backwards;
@@ -68,6 +68,16 @@ body {
         right: 16%;
     }
 }
+
+@keyframes turn {
+    0%{
+        rotate: 10turn;
+    }
+    100%{
+        rotate: 50turn;
+    }
+}
+
 
 
 /* ANIMATION COUP DE POING */

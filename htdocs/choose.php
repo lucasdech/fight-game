@@ -57,8 +57,8 @@ $monsters = $MonstersManager->getmonster();
                         </div>
 
 
-                        <div>
-                            <button id="bouton_choose" class="m-5 d-flex flex-column justify-content-end" type="submit"></button>
+                        <div class="d-flex justify-content-between align-items-top me-5 mt-3">
+                            <button id="bouton_choose" class="me-5 d-flex flex-column justify-content-end" type="submit"></button>
                         </div>
 
                         <div class="m-4 d-flex flex-column">
