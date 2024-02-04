@@ -67,12 +67,16 @@ $fight = $addfight->fight($hero,$Monster);
             <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
         </div>
 
+            <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
+
         <div>
             <button class=" text-white btn btn-alert" id="test"
                 data-hero_id="<?$hero->getId()?>"
                 data-monster_id="<?$Monster->getId()?>">envoyer
             </button>
         </div>
+
+                        <!-- FIN DU BOUTTON ESSAIE  -->
 
         <div class="case2 h-100 col-4">
 
