@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-// require_once "./config/debug.php";
+require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
 
@@ -10,12 +10,6 @@ $hero = $SelectHeroID->getHeroByID($_POST['hero_id']) ;
 
 $SelectMonsterID = new MonstersManager($connexion);
 $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
-
-$addfight = new CombatManager($connexion);
-$fight = $addfight->fight($hero,$Monster);
-
-// var_dump($hero->getWeapon());
-// die;
 
 ?>
 
@@ -34,15 +28,10 @@ $fight = $addfight->fight($hero,$Monster);
     <section class="combats d-flex justify-content-evenly text-center">
 
         <div class="case1 h-100 col-4">
-            <div class="row h-50 align-items-center"> 
+            <div class="row h-50 align-items-center" id="fight-hero"> 
             
-                <?php
-                    foreach ($fight['hero'] as $key) {?> 
-                    <div class="bg-success">
-                        <?=$key . "<br>";?>
-                    </div>   
-                <?php } 
-                    ?>
+               
+               
 
             </div>
 
@@ -62,19 +51,16 @@ $fight = $addfight->fight($hero,$Monster);
             </div>
         </div>
 
-        <div class=" col-2 H-100 d-flex justify-content-center align-items-center" >
-            <button type="button" id="fight" class="btn btn-danger">Danger</button>
-            <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
-        </div>
 
             <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
 
-        <div>
-            <button class=" text-white btn btn-alert" id="test"
-                data-hero_id="<?$hero->getId()?>"
-                data-monster_id="<?$Monster->getId()?>">envoyer
-            </button>
-        </div>
+        <div class=" col-2 H-100 d-flex justify-content-center align-items-center">
+                <button class=" text-white btn btn-danger" id="fight"
+                    data-hero_id="<?=$hero->getId()?>"
+                    data-monster_id="<?=$Monster->getId()?>">envoyer
+                </button>
+                <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
+       </div>
 
                         <!-- FIN DU BOUTTON ESSAIE  -->
 
@@ -84,15 +70,9 @@ $fight = $addfight->fight($hero,$Monster);
                 <!-- COTER MECHANT  -->
                 
 
-            <div class="row h-50  align-items-center"> 
+            <div class="row h-50 align-items-center"  id="fight-monster"> 
                     
-                    <?php
-                foreach ($fight['monster'] as $key) {?> 
-                <div class="bg-danger">
-                    <?=$key . "<br>";?>
-                </div>   
-                <?php } 
-                    ?>
+                   <div> </div>
             </div>
 
 

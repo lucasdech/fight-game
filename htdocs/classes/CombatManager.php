@@ -28,20 +28,22 @@ class CombatManager {
     }
 
 
+    
+
     public function fightAJAX(Hero $Hero, Monster $Monster)
     {
-        $fight = [
+        $fight2 = [
             'hero' => [],
             'monster' => [],
         ];
 
             
             $Monster->hit($Hero);
-            array_push($fight['monster'], $Monster->getName() . " tape et inflige " . $Monster->getAttack() . " degat");
+            array_push($fight2['monster'], $Monster->getName() . " tape et inflige " . $Monster->getAttack() . " degat");
             $Hero->hit($Monster);
-            array_push($fight['hero'],  $Hero->getName() . " tape et inflige "  . $Hero->getAttack() . " degat");
+            array_push($fight2['hero'],  $Hero->getName() . " tape et inflige "  . $Hero->getAttack() . " degat");
             
-     return $fight;
+     return $fight2;
     }
 
 

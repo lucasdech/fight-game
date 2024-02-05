@@ -16,43 +16,47 @@ fight.addEventListener('click', function(){
 
 })
 
-        // ESSAIE FORM DATA POUR PASSER L'ID DU HERO
-  
-let formData = document.querySelector('#test')
-
-    let data_monster = formData.dataset.monster_id;
-    let data_hero = formData.dataset.hero_id;
-    
-    formData.addEventListener('click', function(){
-        
-        
-    console.log(data_hero);
-    console.log(data_monster);
-    console.log(formData)
-
-})
 
 
-        // FIN FORM DATA POUR PASSER L'ID DU HEROa
+    // AJAX FORM DATA POUR PASSER L'ID DU HERO
+
+
+  let test = document.querySelector('#fight')
+
+      test.addEventListener('click', function(){
+
+            let formData = new FormData();
+                    
+            let hero_id =  test.dataset.hero_id
+            let monster_id =  test.dataset.monster_id
+
+
+            formData.append("hero_id", hero_id);
+            formData.append("monster_id", monster_id);
+            
+                    console.log(formData)
+
+               fetch("./process/fight_AJAX.php", {
+                 method : "post",
+                 body : formData
+               })
+
+               .then((resp)=>{
+                   return resp.json();
+                 })
+                 .then((data)=>{
+                    console.log(data);
+                    // innert html avec += 
+
+                    let appendHero = document.querySelector('#fight-hero');
+                    let appendMonster = document.querySelector('#fight-monster');
+
+                    appendHero.innerHTML += data['hero'];
+                    appendMonster.innerHTML += data['monster'];
+
+                 })                
+    })
 
 
 
-// let test = document.querySelector('#test')
-
-//     test.addEventListener('click', function(){
-
-//         console.log(test)
-
-//         function fightTurn() {
-
-//             fetch("./process/fight_AJAX.php")
-//             .then((resp)=>{
-//                 return resp.json();
-//             })
-
-
-
-//         }
-//     })
-
-
+ 
