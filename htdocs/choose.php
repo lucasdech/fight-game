@@ -42,7 +42,7 @@ $monsters = $MonstersManager->getmonster();
 
                 <div class="">
                     <form action="./combat.php" method="post" class="d-flex justify-content-between">
-                        <div class="m-4 d-flex flex-column">
+                        <div class="m-2 d-flex flex-column">
 
                             <label class="mb-5" for="deadpool_radio">
                                 <input type="radio" id="deadpool_radio" name="hero_id" value="<?=$heros[0]->getId()?>"/>
@@ -58,7 +58,7 @@ $monsters = $MonstersManager->getmonster();
 
 
                         <div>
-                            <button id="bouton_choose" class="m-5 d-flex flex-column justify-content-end" type="submit"></button>
+                            <button id="bouton_choose" class="mt-3 d-flex flex-column justify-content-center" type="submit"></button>
                         </div>
 
                         <div class="m-4 d-flex flex-column">
