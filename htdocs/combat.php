@@ -1,9 +1,20 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-require_once "./config/debug.php";
+// require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
+
+    
+if (empty($_POST['hero_id']) && empty($_POST['monster_id'])) {
+    
+ ?>
+    <div class="H100">
+    <p>choisi 2 personnages stp </p>
+       <button class="btn btn-danger"> <a href="./choose.php">retour au choix </a> </button>
+    </div>
+<?php die; } 
+
 
 $SelectHeroID = new HeroesManager($connexion);
 $hero = $SelectHeroID->getHeroByID($_POST['hero_id']) ;
@@ -25,6 +36,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 </head>
 <body>
     
+
     <section class="combats d-flex justify-content-evenly text-center">
 
         <div class="case1 h-100 col-4">
@@ -51,7 +63,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
             </div>
         </div>
 
-        
+
             <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
 
         <div class=" col-2 H-100 d-flex justify-content-center align-items-center">
@@ -72,7 +84,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
             <div class="row h-50 align-items-center"  id="fight-monster"> 
                     
-                   <div> </div>
+                   
             </div>
 
 
@@ -91,6 +103,8 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
         </div>
 
     </section>
+
+
 
     <script src="./JS/script.js"></script>
 </body>
