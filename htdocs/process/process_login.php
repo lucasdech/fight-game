@@ -1,5 +1,5 @@
 <?php
-session_start();
+ 
 // include "../config/debug.php";
 require_once '../config/autoloader.php';
 
