@@ -46,12 +46,11 @@ fight.addEventListener('click', function(){
                  })
                  .then((data)=>{
                     console.log(data);
-                    // innert html avec += 
 
                     let appendHero = document.querySelector('#fight-hero');
                     let appendMonster = document.querySelector('#fight-monster');
 
-                    appendHero.innerHTML += data['hero'];
+                    appendHero.innerHTML += `<div class="text-primary"> ${data['hero']} </div>`  ;
                     appendMonster.innerHTML += data['monster'];
 
                  })                
