@@ -51,7 +51,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
             </div>
         </div>
 
-
+        
             <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
 
         <div class=" col-2 H-100 d-flex justify-content-center align-items-center">
