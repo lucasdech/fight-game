@@ -56,12 +56,10 @@ $monsters = $MonstersManager->getmonster();
 
                         </div>
 
+                            <div>
+                                <button id="bouton_choose" class="mt-3 d-flex flex-column justify-content-center" type="submit"></button>
 
-
-                        <div>
-                            <button id="bouton_choose" class="mt-3 d-flex flex-column justify-content-center" type="submit"></button>
-
-                        </div>
+                            </div>
 
                         <div class="m-4 d-flex flex-column">
                             
