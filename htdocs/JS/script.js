@@ -50,12 +50,19 @@ fight.addEventListener('click', function(){
                     let appendHero = document.querySelector('#fight-hero');
                     let appendMonster = document.querySelector('#fight-monster');
 
-                    appendHero.innerHTML += `<div class="text-primary"> ${data['hero']} </div>`  ;
-                    appendMonster.innerHTML += data['monster'];
+                    appendHero.innerHTML += `<div class="text-success"> ${data['hero']} </div>`;
+                    appendMonster.innerHTML += `<div class="text-white"> ${data['monster']} </div>`;
 
                  })                
     })
 
 
+    function verifierValeur(a, b) {
+      if (setHP <= 0)
+        if (b === 2)
+          console.log("barre de vie baisse");
+      else
+        console.log("a ne vaut pas 1");
+    }
 
  

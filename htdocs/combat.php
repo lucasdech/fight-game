@@ -39,13 +39,11 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
     <section class="combats d-flex justify-content-evenly text-center">
 
-        <div class="case1 h-100 col-4">
-            <div class="row h-50 align-items-center" id="fight-hero"> 
-            
-               
-               
+        <div class="case1 h-100 col-3">
+            <div class="row h-50 align-items-center" id="fight-hero">    
 
             </div>
+            
 
             <!-- COTER GENTIL -->
 
@@ -82,9 +80,9 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                 <!-- COTER MECHANT  -->
                 
 
-            <div class="row h-50 align-items-center"  id="fight-monster"> 
-                    
-                   
+            <div class="row h-50 align-items-center" > 
+                   <div class="" id="fight-monster"> </div>
+
             </div>
 
 
