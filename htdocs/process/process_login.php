@@ -4,8 +4,6 @@
 require_once '../config/autoloader.php';
 
 if (!empty($_POST['pseudo'])) {
-
-
     
     require_once '../config/db.php';
 

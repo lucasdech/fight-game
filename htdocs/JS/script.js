@@ -14,6 +14,49 @@ fight.addEventListener('click', function(){
     shuriken.toggle("shurikenHidden")
     shuriken.toggle("shuriken")
 
-
-
 })
+
+
+
+    // AJAX FORM DATA POUR PASSER L'ID DU HERO
+
+
+  let test = document.querySelector('#fight')
+
+      test.addEventListener('click', function(){
+
+            let formData = new FormData();
+                    
+            let hero_id =  test.dataset.hero_id
+            let monster_id =  test.dataset.monster_id
+
+
+            formData.append("hero_id", hero_id);
+            formData.append("monster_id", monster_id);
+            
+                    console.log(formData)
+
+               fetch("./process/fight_AJAX.php", {
+                 method : "post",
+                 body : formData
+               })
+
+               .then((resp)=>{
+                   return resp.json();
+                 })
+                 .then((data)=>{
+                    console.log(data);
+                    // innert html avec += 
+
+                    let appendHero = document.querySelector('#fight-hero');
+                    let appendMonster = document.querySelector('#fight-monster');
+
+                    appendHero.innerHTML += data['hero'];
+                    appendMonster.innerHTML += data['monster'];
+
+                 })                
+    })
+
+
+
+ 
