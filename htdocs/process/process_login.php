@@ -3,26 +3,27 @@
 // include "../config/debug.php";
 require_once '../config/autoloader.php';
 
-if (!empty($_POST['pseudo'])) {
-    
     require_once '../config/db.php';
-
-    $_SESSION['pseudo'] = $_POST['pseudo'];
-
+    
     $preparedRequest = $connexion->prepare("SELECT * FROM player WHERE pseudo = ?");
     $preparedRequest->execute([
-        $_POST['pseudo'],
+        
+        $user = $preparedRequest->fetchAll(PDO::FETCH_ASSOC)
+        
     ]);
-
-
-    $PlayersManager = new PlayersManager($connexion);
-    $Player = new Player($_POST['pseudo'],);
-    $PlayersManager->addPlayer($Player);
     
-    
-        header('Location: ../choose.php?');
-        die;
+    if ($user = $_POST['pseudo']){;
+
+        header('Location: ../choose.php?success=Vous êtes connecté.');
+
     } else {
-    header('Location: ../index.php?success=Pseudo enregistré !');
-    die;
-}
+
+        $preparedRequest = $connexion->prepare("INSERT INTO player (pseudo) VALUES (?)");
+        $preparedRequest->execute([
+
+            $_POST['pseudo'],
+
+        ]);
+        
+        header('Location: ../choose.php?success=Pseudo creer.');
+    }
