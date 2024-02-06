@@ -3,7 +3,7 @@ session_start();
 require_once './config/autoloader.php';
 // require_once "./config/debug.php";
 require_once "./config/db.php";
-// include "./config/message.php";
+include "./config/message.php";
 
 
 $HeroesManager = new HeroesManager($connexion);
@@ -32,6 +32,11 @@ $players = $PlayerManager->getPlayer();
     <link rel="stylesheet" href="./style/style_choose.css">
 
 </head>
+<!-- 
+<form action="./process/logout.php">
+    <button class="btn btn-danger" type="submit"><p>deconnexion de session</p></button>
+
+</form> -->
 
 <body class="d-flex justify-content-center">
 

@@ -49,4 +49,9 @@ class HeroesManager {
        return $Hero;
        
     }
+
+   
+
 }
+
+
