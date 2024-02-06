@@ -34,7 +34,6 @@ fight.addEventListener('click', function(){
             formData.append("hero_id", hero_id);
             formData.append("monster_id", monster_id);
             
-                    console.log(formData)
 
                fetch("./process/fight_AJAX.php", {
                  method : "post",
@@ -49,9 +48,19 @@ fight.addEventListener('click', function(){
 
                     let appendHero = document.querySelector('#fight-hero');
                     let appendMonster = document.querySelector('#fight-monster');
+                    
+                    
 
-                    appendHero.innerHTML += `<div class="text-success"> ${data['hero']} </div>`;
-                    appendMonster.innerHTML += `<div class="text-white"> ${data['monster']} </div>`;
+                    // if ($Hero->getHP() > 0 || $Monster->getHealth_points() > 0) {
+                      
+                      appendHero.innerHTML += `<div class="text-success"> ${data['hero']} </div>`;
+                      appendMonster.innerHTML += `<div class="text-white"> ${data['monster']} </div>`;
+                    // }
+
+                    // console.log(data['hero'])
+                    // console.log(data['monster'])
+                    console.log(data)
+
 
                  })                
     })

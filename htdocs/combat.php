@@ -67,7 +67,8 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
         <div class=" col-2 H-100 d-flex justify-content-center align-items-center">
                 <button class=" text-white btn btn-danger" id="fight"
                     data-hero_id="<?=$hero->getId()?>"
-                    data-monster_id="<?=$Monster->getId()?>">envoyer
+                    data-monster_id="<?=$Monster->getId()?>"
+                    >envoyer
                 </button>
                 <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
        </div>
