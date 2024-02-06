@@ -8,7 +8,7 @@ require_once '../config/autoloader.php';
     $preparedRequest = $connexion->prepare("SELECT * FROM player WHERE pseudo = ?");
     $preparedRequest->execute([
         
-        $user = $preparedRequest->fetchAll(PDO::FETCH_ASSOC)
+        $user = $preparedRequest->fetch(PDO::FETCH_ASSOC)
         
     ]);
     
