@@ -66,7 +66,7 @@ fight.addEventListener('click', function(){
     })
 
 
-    function verifierValeur(a, b) {
+    function verifierValeur(health_points, b) {
       if (setHP <= 0)
         if (b === 2)
           console.log("barre de vie baisse");
