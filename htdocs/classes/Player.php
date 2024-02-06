@@ -34,3 +34,16 @@ class Player {
         $this->pseudo = $pseudo;
     }
 }
+
+
+
+
+// datetime de connexion
+// datetime dernière requête serveur
+// session_id() PHP
+// Informations navigateur utilisateur ayant initié la connexion
+// Adresse IP utilisateur connecté ayant initié la connexion
+// Id technique de l'utilisateur connecté
+// Les données sérialisées à maintenir
+// La durée maximale de session applicative
+// La durée de vie configurée de votre gc

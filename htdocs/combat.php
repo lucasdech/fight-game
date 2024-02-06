@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-// require_once "./config/debug.php";
+require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
 
@@ -71,6 +71,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
         <div class="case1 h-100 col-3">
 
 
+
             <div class="row h-50 align-items-center" > 
                    <div class="" id="fight-hero"> </div>
             </div>
@@ -80,8 +81,8 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
             <!-- COTER GENTIL -->
 
             <div class="row h-50 align-items-center"> 
-                <div class="mb-2">
-                    <p class=" text-success fs-3 fw-bold"><?=$hero->getName()?></p>
+                <div class="mb-5">
+                    <p class="fs-2 text-success fw-bold"><?=$hero->getName()?></p>
                     <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
       
             <!-- FAUSSE BARRE DE VIE  -->
@@ -125,13 +126,14 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                
 
             <div class="row h-50 align-items-center" > 
-                   <div class="" id="fight-monster"> </div>
+                   <div class="mt-2" id="fight-monster"> </div>
 
             </div>
 
 
         <div class="row h-50  align-items-center"> 
                 <div class="">
+
                     <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
                     <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
 
@@ -141,6 +143,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                             <div class="progress-bar bg-danger" style="width:<?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
                     </div>
                 </div>
+
 
                     <!-- boule de feu -->
                     <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="150px"> 

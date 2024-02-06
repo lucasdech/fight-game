@@ -1,16 +1,14 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-// require_once "./config/debug.php";
+require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
 
-$PlayerManager = new PlayersManager($connexion);
-$players = $PlayerManager->getPlayer();
-
+// $PlayerManager = new PlayersManager($connexion);
+// $players = $PlayerManager->getPlayer();
 
 ?>
-
 
 <!DOCTYPE html>
 <html lang="fr">
@@ -22,8 +20,12 @@ $players = $PlayerManager->getPlayer();
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/style_index.css">
 </head>
+<!-- 
 
+<form action="./process/logout.php">
+    <button class="btn btn-danger" type="submit"><p>deconnexion de session</p></button>
 
+</form> -->
 
 <body id="fond">
 
@@ -39,7 +41,7 @@ $players = $PlayerManager->getPlayer();
         </div>
 
         <div class="formConnexion connexion col d-flex justify-content-center align-items-center">
-            <form action="./process/process_login.php" method="post">
+            <form action="./process/fight_Ajax.php" method="post">
                 <div class="mb-2 d-flex justify-content-center">
                     <h2 class="text-white">Pseudo</h2>
                 </div>

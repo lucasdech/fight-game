@@ -6,4 +6,4 @@ session_start();
 
 session_destroy();
 
-header('Location: ../../index.php?success=Vous êtes bien déconnecté !');
+header('Location: ../index.php?success=Vous êtes bien déconnecté !');

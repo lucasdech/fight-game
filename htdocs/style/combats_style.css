@@ -2,7 +2,7 @@
 
 
 body {
-
+    font-family: 'VT323', monospace;
     color: white;
     background-image: url(../images/decors-jeu-combat-106.gif);
     background-size: cover;
@@ -117,8 +117,8 @@ body {
 #fight-monster {
 
 font-family: 'VT323', monospace;
-color:rgb(24, 131, 150);
-font-size: 23pt;
+color:#188396;
+font-size: 2rem;
 
 }
 
@@ -126,7 +126,7 @@ font-size: 23pt;
 
     font-family: 'VT323', monospace;
     color:rgb(24, 131, 150);
-    font-size: 23pt;
+    font-size: 2rem;
     
     }
 
