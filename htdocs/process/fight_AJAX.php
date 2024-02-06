@@ -9,7 +9,6 @@ if (!empty($_POST['hero_id']) && !empty($_POST['monster_id'])){
     $HeroesManager = new HeroesManager($connexion);
     $heros = $HeroesManager->getHeroByID($_POST['hero_id']);
 
-
     $MonstersManager = new MonstersManager($connexion);
     $monsters = $MonstersManager->getMonsterByID($_POST['monster_id']);
 

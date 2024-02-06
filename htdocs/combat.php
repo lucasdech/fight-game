@@ -22,6 +22,35 @@ $hero = $SelectHeroID->getHeroByID($_POST['hero_id']) ;
 $SelectMonsterID = new MonstersManager($connexion);
 $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
+// echo "<pre>";
+// var_dump($hero);
+// echo "</pre>";
+
+// echo "<pre>";
+// var_dump($hero->getHP());
+// echo "</pre>";
+
+// echo "<pre>";
+// var_dump($hero->getAttack());
+// echo "</pre>";
+
+
+
+// echo "<pre>";
+// var_dump($Monster);
+// echo "</pre>";
+
+// echo "<pre>";
+// var_dump($Monster->getHealth_points());
+// echo "</pre>";
+
+// echo "<pre>";
+// var_dump($Monster->getAttack());
+// echo "</pre>";
+
+
+
+
 ?>
 
 <!DOCTYPE html>
@@ -40,10 +69,13 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
     <section class="combats d-flex justify-content-evenly text-center">
 
         <div class="case1 h-100 col-3">
-            <div class="row h-50 align-items-center" id="fight-hero">    
 
+
+            <div class="row h-50 align-items-center" > 
+                   <div class="" id="fight-hero"> </div>
             </div>
-            
+
+        
 
             <!-- COTER GENTIL -->
 
@@ -51,11 +83,19 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                 <div class="mb-2">
                     <p class=" text-success fs-3 fw-bold"><?=$hero->getName()?></p>
                     <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
+      
+            <!-- FAUSSE BARRE DE VIE  -->
+
+                <div id="lifebar"  class="row progress " role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHp()?>" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-danger" style="width: ><?=$hero->getHp()?>"><?=$hero->getHp()?> PV</div>
+                </div>
+
                      <!-- boule de feu -->
                      <img id="shuriken" class="shurikenHidden shurikenfilter" src="./images/<?=$hero->getWeapon()?>" alt="" width="150px"> 
                     <!-- boule de feu FIN  -->
-                    <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHP()?>" aria-valuemin="0" aria-valuemax="100">
-                        <div class="progress-bar bg-success" style="width: <?=$hero->getHP()?>%"><?=$hero->getHP()?> PV</div>
+                        <div id="vie_Hero">
+
+                        </div> 
                     </div>
                 </div>
             </div>
@@ -81,7 +121,8 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
         
                 <!-- COTER MECHANT  -->
-                
+        
+               
 
             <div class="row h-50 align-items-center" > 
                    <div class="" id="fight-monster"> </div>
@@ -93,12 +134,23 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                 <div class="">
                     <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
                     <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
+
+                     <!-- FAUSSE BARRE DE VIE  -->
+                <div>
+                    <div id="lifebar2" class="progress " role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
+                            <div class="progress-bar bg-danger" style="width:<?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
+                    </div>
+                </div>
+
                     <!-- boule de feu -->
                     <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="150px"> 
                     <!-- boule de feu FIN  -->
-                    <div class="w-auto progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-danger" style="width: <?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
+                       
+                        <div id="vie_Monster">
+                           
                         </div>
+
+                    </div>
                 </div>
             </div>
         </div>
