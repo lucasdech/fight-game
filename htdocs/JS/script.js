@@ -67,13 +67,18 @@ fight.addEventListener('click', function(){
 
 
 
-    function verifierValeur(health_points, b) {
-      if (setHP <= 0)
-        if (b === 2)
-          console.log("barre de vie baisse");
-      else
-        console.log("a ne vaut pas 1");
-    }
 
-
+let datavie = 100;
+do {
+  alert( jeux );
  
+  barre de vie - getattack;
+} while ( vie est < 0);
+
+const seuil = 14;
+let compteur = 0;
+
+while ((compteur = seuil)) {
+  compteur++;
+  /* Faire quelque chose avec compteur */
+}

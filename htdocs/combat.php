@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-// require_once "./config/debug.php";
+require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
 
@@ -40,7 +40,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
     <section class="combats d-flex justify-content-evenly text-center">
 
         <div class="case1 h-100 col-3">
-            <div class="row h-50 align-items-center" id="fight-hero">    
+            <div class="mt-2 row h-50 align-items-center" id="fight-hero">    
 
             </div>
             
@@ -48,8 +48,8 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
             <!-- COTER GENTIL -->
 
             <div class="row h-50 align-items-center"> 
-                <div class="mb-2">
-                    <p class=" text-success fs-3 fw-bold"><?=$hero->getName()?></p>
+                <div class="mb-5">
+                    <p class="fs-2 text-success fw-bold"><?=$hero->getName()?></p>
                     <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
                      <!-- boule de feu -->
                      <img id="shuriken" class="shurikenHidden shurikenfilter" src="./images/<?=$hero->getWeapon()?>" alt="" width="150px"> 
@@ -84,15 +84,15 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                 
 
             <div class="row h-50 align-items-center" > 
-                   <div class="" id="fight-monster"> </div>
+                   <div class="mt-2" id="fight-monster"> </div>
 
             </div>
 
 
         <div class="row h-50  align-items-center"> 
                 <div class="">
-                    <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
-                    <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
+                    <p class="fs-2"><?=$Monster->getName()?></p>
+                    <img class="mb-3" id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
                     <!-- boule de feu -->
                     <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="150px"> 
                     <!-- boule de feu FIN  -->
