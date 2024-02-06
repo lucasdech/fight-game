@@ -1,9 +1,9 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-// require_once "./config/debug.php";
+require_once "./config/debug.php";
 require_once "./config/db.php";
-include "./config/message.php";
+// include "./config/message.php";
 
 
 $HeroesManager = new HeroesManager($connexion);

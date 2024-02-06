@@ -65,3 +65,20 @@ fight.addEventListener('click', function(){
                  })                
     })
 
+
+
+
+let datavie = 100;
+do {
+  alert( jeux );
+ 
+  barre de vie - getattack;
+} while ( vie est < 0);
+
+const seuil = 14;
+let compteur = 0;
+
+while ((compteur = seuil)) {
+  compteur++;
+  /* Faire quelque chose avec compteur */
+}
