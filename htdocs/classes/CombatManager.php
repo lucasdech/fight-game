@@ -35,13 +35,18 @@ class CombatManager {
         $fight2 = [
             'hero' => [],
             'monster' => [],
+            'hitHERO' => [],
+            'hitMONSTER' => [],
         ];
+        
+        
+        $Monster->hit($Hero);
+        array_push($fight2['monster'], $Monster->getName() . " tape et inflige " . $Monster->getAttack() . " degat");
+        array_push($fight2['hitMONSTER'], $Monster->getAttack($Hero));
 
-            
-            $Monster->hit($Hero);
-            array_push($fight2['monster'], $Monster->getName() . " tape et inflige " . $Monster->getAttack() . " degat");
-            $Hero->hit($Monster);
-            array_push($fight2['hero'],  $Hero->getName() . " tape et inflige "  . $Hero->getAttack() . " degat");
+        $Hero->hit($Monster);
+        array_push($fight2['hitHERO'], $Hero->getAttack($Monster));
+        array_push($fight2['hero'],  $Hero->getName() . " tape et inflige "  . $Hero->getAttack() . " degat");
             
      return $fight2;
     }
