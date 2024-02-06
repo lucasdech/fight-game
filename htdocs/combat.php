@@ -69,7 +69,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                     data-hero_id="<?=$hero->getId()?>"
 
                     data-monster_id="<?=$Monster->getId()?>"
-                    >envoyer
+                    >
 
                 </button>
                 <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>

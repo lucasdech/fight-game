@@ -51,19 +51,20 @@ fight.addEventListener('click', function(){
                     
                     
 
-                    // if ($Hero->getHP() > 0 || $Monster->getHealth_points() > 0) {
+                    //  if ($Hero->getHP() > 0 || $Monster->getHealth_points() > 0) {
                       
                       appendHero.innerHTML += `<div class="text-success"> ${data['hero']} </div>`;
                       appendMonster.innerHTML += `<div class="text-white"> ${data['monster']} </div>`;
-                    // }
+                    //  }
 
-                    // console.log(data['hero'])
-                    // console.log(data['monster'])
+
+
                     console.log(data)
 
 
                  })                
     })
+
 
 
     function verifierValeur(health_points, b) {
@@ -73,5 +74,6 @@ fight.addEventListener('click', function(){
       else
         console.log("a ne vaut pas 1");
     }
+
 
  
