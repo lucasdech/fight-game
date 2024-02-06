@@ -18,3 +18,5 @@ function chargerClasse($classname)
     require __DIR__ . '/../classes/' . $classname . '.php';
 }
 spl_autoload_register('chargerClasse');
+
+
