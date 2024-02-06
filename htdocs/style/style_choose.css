@@ -8,11 +8,11 @@ width: 100vw;
 }
 
 #bloc_selection {
-    background-image: url(../images/VS_2.png);
+    background-image: url(../images/VS.png);
     background-position: center;
-    background-size: 15%;
+    background-size: 10%;
     background-repeat: no-repeat;
-    background-color: rgba(242, 135, 5, 0.215);   
+    background-color: rgba(242, 135, 5, 0.14);   
     border: 2px solid;
     border-radius: 5px;
 }

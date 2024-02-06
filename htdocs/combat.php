@@ -47,8 +47,8 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
             <!-- COTER GENTIL -->
 
-            <div class="row h-50  align-items-center"> 
-                <div class="mb-5">
+            <div class="row h-50 align-items-center"> 
+                <div class="mb-2">
                     <p class=" text-success fs-3 fw-bold"><?=$hero->getName()?></p>
                     <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
                      <!-- boule de feu -->
@@ -67,8 +67,10 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
         <div class=" col-2 H-100 d-flex justify-content-center align-items-center">
                 <button class=" text-white btn btn-danger" id="fight"
                     data-hero_id="<?=$hero->getId()?>"
+
                     data-monster_id="<?=$Monster->getId()?>"
                     >envoyer
+
                 </button>
                 <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
        </div>

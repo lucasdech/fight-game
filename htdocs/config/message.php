@@ -1,5 +1,7 @@
+
+
 <?php if (!empty($_GET['success'])) {?>
-    <div class="alert alert-success text-center alert-dismissible fade show" id="slide" role="alert"><i class="fa-solid fa-bell fa-shake fa-lg mx-3 opacity-25"></i>
+    <div class="alert alert-success text-center" id="slide" role="alert"><i class="fa-solid opacity-25"></i>
         <?= $_GET['success'] ?>
         <button type="button" class="btn-close" data-bs-dismiss="alert" aria-label="Close"></button>
     </div>

@@ -147,3 +147,26 @@ font-size: 23pt;
         rotate: 50turn;
     }
 }
+
+
+
+#fight {
+    background-image: url(../images/bouton_punch.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    background-color: transparent;
+    position: absolute;
+    border: none;
+
+}
+
+#fight:hover{
+    background-image: url(../images/bouton_punch_2.png);
+    background-size: 100% auto;
+    background-repeat: no-repeat;
+    height: 150px;
+    width: 150px;
+    position: absolute;
+}

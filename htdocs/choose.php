@@ -3,16 +3,18 @@ session_start();
 require_once './config/autoloader.php';
 // require_once "./config/debug.php";
 require_once "./config/db.php";
-include "./config/message.php";
+// include "./config/message.php";
 
 
 $HeroesManager = new HeroesManager($connexion);
 $heros = $HeroesManager->getHero();
 
-
-
 $MonstersManager = new MonstersManager($connexion);
 $monsters = $MonstersManager->getmonster();
+
+$PlayerManager = new PlayersManager($connexion);
+$players = $PlayerManager->getPlayer();
+
 
 ?>
 
@@ -44,7 +46,7 @@ $monsters = $MonstersManager->getmonster();
                     <form action="./combat.php" method="post" class="d-flex justify-content-between">
                         <div class="m-2 d-flex flex-column">
 
-                            <label class="mb-5" for="deadpool_radio">
+                            <label class="mb-3" for="deadpool_radio">
                                 <input type="radio" id="deadpool_radio" name="hero_id" value="<?=$heros[0]->getId()?>"/>
                                 <img id="deadpool" src="./images/<?=$heros[0]->getURL()?>" alt="">
                             </label>
