@@ -1,4 +1,4 @@
-@import url('https://fonts.googleapis.com/css2?family=Protest+Riot&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
 
 
 body {
@@ -112,7 +112,7 @@ body {
 
 #fight-monster {
 
-font-family: 'Protest Riot', sans-serif;
+font-family: 'VT323', monospace;
 color:rgb(24, 131, 150);
 font-size: 23pt;
 
@@ -120,7 +120,7 @@ font-size: 23pt;
 
 #fight-hero {
 
-    font-family: 'Protest Riot', sans-serif;
+    font-family: 'VT323', monospace;
     color:rgb(24, 131, 150);
     font-size: 23pt;
     

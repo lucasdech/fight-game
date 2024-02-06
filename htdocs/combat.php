@@ -74,7 +74,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
                         <!-- FIN DU BOUTTON ESSAIE  -->
 
-        <div class="case2 h-100 col-4">
+            <div class="case1 h-100 col-3">
 
         
                 <!-- COTER MECHANT  -->
@@ -93,7 +93,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                     <!-- boule de feu -->
                     <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="150px"> 
                     <!-- boule de feu FIN  -->
-                    <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
+                    <div class="w-auto progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
                             <div class="progress-bar bg-danger" style="width: <?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
                         </div>
                 </div>
