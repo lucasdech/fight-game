@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-require_once "./config/debug.php";
+// require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
 
@@ -41,7 +41,7 @@ include "./config/message.php";
         </div>
 
         <div class="formConnexion connexion col d-flex justify-content-center align-items-center">
-            <form action="./process/fight_Ajax.php" method="post">
+            <form action="./process/process_login.php" method="post">
                 <div class="mb-2 d-flex justify-content-center">
                     <h2 class="text-white">Pseudo</h2>
                 </div>

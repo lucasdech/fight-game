@@ -8,80 +8,49 @@ width: 100vw;
 }
 
 #bloc_selection {
-    background-image: url(../images/VS.png);
-    background-position: center;
-    background-size: 10%;
-    background-repeat: no-repeat;
-    background-color: rgba(242, 135, 5, 0.14);   
+    background-color: rgba(242, 135, 5, 0.247);   
     border: 2px solid;
     border-radius: 5px;
 }
 
 #deadpool {
-   /* border: 2px solid;
-   border-radius: 10px; */
-   background-size: cover;
-   width : 200px;
-   height : 200px;
+   width : 300px;
+   height : 300px;
 }
 
-
-#ideadpool_radio {
-    /* border: 2px solid;
-    border-radius: 10px; */
-     background-size: cover;
-    width : 1px;
-    height : 1px;
-}
 
 
 #ironman {
-    /* border: 2px solid;
-    border-radius: 10px; */
-     background-size: cover;
-    width : 200px;
-    height : 200px;
+    width : 400px;
+    height : 400px;
 }
 
-
-#ironman_radio {
-    /* border: 2px solid;
-    border-radius: 10px; */
-     background-size: cover;
-    /* width : 1px;
-    height : 1px; */
-}
 
 input[type="radio"]{
     display: none;
+    
 }
 input[type="radio"] + img{
-    filter: brightness(60%);
-    filter: opacity(0.5);
+    filter: brightness(40%);
+    
     
 }
 input[type="radio"]:checked + img {
     filter: brightness(100%);
-    filter: opacity(1);
-    filter: drop-shadow(5px 5px 30px rgb(255, 191, 0));
-
+    filter: drop-shadow(5px 5px 60px rgb(255, 191, 0));
 }
 
+
 #tanos {
-    /* border: 2px solid;
-    border-radius: 10px; */
-     background-size: cover;
-    width : 180px;
-    height : 180px;
+    width : 300px;
+    height : 300px;
 }
 
 
 #bowser {
-    /* border: 2px solid;
-    border-radius: 10px; */
-     background-size: cover;
-    width : 210px;
-    height : 210px;
+
+    width : 300px;
+    height : 300px;
 }
 
 
@@ -114,3 +83,4 @@ input[type="radio"]:checked + img {
     width: 150px;
     position: absolute;
 }
+
