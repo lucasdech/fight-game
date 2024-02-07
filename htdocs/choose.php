@@ -69,7 +69,6 @@ $players = $PlayerManager->getPlayer();
                                 <button id="bouton_choose" class="" type="submit"></button>
                             </div>  
                             
-                            <div class="figcaption"> LET's GO</div>
                                 
                     <!-- la div des mechants-->       
                     <div class="d-flex flex-column">
