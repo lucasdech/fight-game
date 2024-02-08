@@ -37,16 +37,23 @@ class CombatManager {
             'monster' => [],
             'hitHERO' => [],
             'hitMONSTER' => [],
+            'HPhero' => [],
+            'HPmonster' => [],
         ];
         
         
         $Monster->hit($Hero);
         array_push($fight2['monster'], $Monster->getName() . " tape et inflige " . $Monster->getAttack() . " degat");
-        array_push($fight2['hitMONSTER'], $Monster->getAttack($Hero));
+        array_push($fight2['hitMONSTER'], $Monster->getAttack());
+        array_push($fight2['HPmonster'], $Monster->getHealth_points());
+
 
         $Hero->hit($Monster);
-        array_push($fight2['hitHERO'], $Hero->getAttack($Monster));
         array_push($fight2['hero'],  $Hero->getName() . " tape et inflige "  . $Hero->getAttack() . " degat");
+        array_push($fight2['hitHERO'], $Hero->getAttack());
+        array_push($fight2['HPhero'], $Hero->getHP());
+
+
             
      return $fight2;
     }
@@ -54,3 +61,4 @@ class CombatManager {
 
 }
 
+    

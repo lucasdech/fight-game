@@ -30,11 +30,13 @@ input[type="radio"]{
     display: none;
     
 }
+
 input[type="radio"] + img{
-    filter: brightness(40%);
-    
+    filter: brightness(60%);
+ 
     
 }
+
 input[type="radio"]:checked + img {
     filter: brightness(100%);
     filter: drop-shadow(5px 5px 60px rgb(255, 191, 0));

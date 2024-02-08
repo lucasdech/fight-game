@@ -50,7 +50,14 @@ class HeroesManager {
        
     }
 
-   
+
+     // public function update(Monster $monster){
+
+    //     $prepareRequest = $this->$connexion->prepare('UPDATE monster SET health_points =  WHERE id = ?');
+    //     $prepareRequest->execute([
+            
+    //     ])
+    //  }
 
 }
 
