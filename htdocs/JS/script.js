@@ -44,7 +44,7 @@ fight.addEventListener('click', function(){
                    return resp.json();
                  })
                  .then((data)=>{
-                    console.log(data);
+                    console.log(data.HPmonster);
 
                       // AFFICHER MLES ETAPES DU COMBATS 
 
@@ -64,8 +64,8 @@ fight.addEventListener('click', function(){
                     let barresDeVie = document.querySelector('#lifebar')
                     let barresDeVie2 = document.querySelector('#lifebar2')
 
-                    barresDeVie.classList.add("HIDDEN")
-                    barresDeVie2.classList.add("HIDDEN")
+                      barresDeVie.classList.add("HIDDEN")
+                      barresDeVie2.classList.add("HIDDEN")
 
                     // FIN DE CACHER LES BARRES
 
@@ -74,23 +74,21 @@ fight.addEventListener('click', function(){
                     // RENDRE LA BARRE DE VIE INTERACTIVE 
 
                     let vieHero = document.querySelector('#vie_Hero')
-                    let vieMonster = document.querySelector('#vie_Monster')
-                      
-                      console.log(data['hitHERO']);
-                      console.log(data['hitMONSTER']);
-
-
-                    let viehero = 10;
-
-                    vieHero.innerHTML = ` <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="${viehero}" aria-valuemin="0" aria-valuemax="100">
-                                          <div class="progress-bar bg-danger" style="width: ${viehero}%"><?=$Monster->getHealth_points()?> PV</div> `
-
-                    let viemonster = 10;
-
-                    vieMonster.innerHTML  = ` <div class="w-auto progress" role="progressbar" aria-label="Danger example" aria-valuenow="${viemonster}" aria-valuemin="0" aria-valuemax="100">
-                                              <div class="progress-bar bg-danger" style="width: ${viemonster}%"><?=$Monster->getHealth_points()?> PV</div> `
-                                          
+                    let vieMonster = document.querySelector('#vie_Monster')                  
+                  
                     
+                    vieHero.innerHTML = ` <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="${hpHero}" aria-valuemin="0" aria-valuemax="${hpHero}">
+                    <div class="progress-bar bg-danger" style="width: ${coupMonster}%">${coupMonster} PV</div> `
+                    
+                    
+                    
+                    vieMonster.innerHTML  = ` <div class="w-auto progress" role="progressbar" aria-label="Danger example" aria-valuenow="${hpMonster}" aria-valuemin="0" aria-valuemax="${hpMonster}">
+                    <div class="progress-bar bg-danger" style="width: ${coupHero}%">${coupHero} PV</div> `
+                    
+                    
+                    // if (data.HPhero <= 0 || data.HPmonster) {
+                    //    test.setAttribute("disable", true)
+                    // }
                     
 
 
@@ -99,17 +97,17 @@ fight.addEventListener('click', function(){
 
 
 
-let datavie = 100;
-do {
-  alert( jeux );
+// let datavie = 100;
+// do {
+//   alert( jeux );
  
-  barre de vie - getattack;
-} while ( vie est < 0);
+//   barre de vie - getattack;
+// } while ( vie est < 0);
 
-const seuil = 14;
-let compteur = 0;
+// const seuil = 14;
+// let compteur = 0;
 
-while ((compteur = seuil)) {
-  compteur++;
-  /* Faire quelque chose avec compteur */
-}
+// while ((compteur = seuil)) {
+//   compteur++;
+//   /* Faire quelque chose avec compteur */
+// }

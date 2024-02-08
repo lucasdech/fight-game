@@ -47,5 +47,13 @@ class MonstersManager {
         
      }
 
+     public function update(Monster $monster){
 
+         $prepareRequest = $this->connexion->prepare('UPDATE monster SET health_points = ? WHERE id = ?');
+         $prepareRequest->execute([
+            $monster->getHealth_points(),
+            $monster->getId()
+         ]);
+     }
+    
 }
