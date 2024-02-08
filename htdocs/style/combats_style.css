@@ -1,10 +1,12 @@
 @import url('https://fonts.googleapis.com/css2?family=VT323&display=swap');
-
+@import url('https://fonts.googleapis.com/css2?family=Protest+Guerrilla&display=swap');
 
 body {
-    font-family: 'VT323', monospace;
+    font-family: 'Protest Guerrilla', sans-serif;
+    font-size: small;
     color: white;
     background-image: url(../images/decors-jeu-combat-106.gif);
+    background-repeat: no-repeat;
     background-size: cover;
     height: 100vh;
 }
@@ -19,21 +21,16 @@ body {
 }
 
 #hero {
-    /* border: 2px solid;
-    border-radius: 10px; */
-     background-size: cover;
-    width : 300px;
-    height : 300px;
+    width : 400px;
+    height : 400px;
     filter: drop-shadow(5px 5px 30px rgb(10, 234, 47));
 }
 
 
 #mechant_combat {
-    /* border: 2px solid;
-    border-radius: 10px; */
-     background-size: cover;
-    width : 300px;
-    height : 300px;
+
+    width : 400px;
+    height : 400px;
     filter: drop-shadow(5px 5px 30px rgb(255, 23, 23));
 }
 
@@ -116,7 +113,6 @@ body {
 
 #fight-monster {
 
-font-family: 'VT323', monospace;
 color:#188396;
 font-size: 2rem;
 
@@ -173,4 +169,10 @@ font-size: 2rem;
     height: 150px;
     width: 150px;
     position: absolute;
+}
+
+.bouttonretour{
+
+text-align: center;    
+
 }

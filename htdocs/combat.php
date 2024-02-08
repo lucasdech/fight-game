@@ -9,9 +9,15 @@ include "./config/message.php";
 if (empty($_POST['hero_id']) && empty($_POST['monster_id'])) {
     
  ?>
-    <div class="H100">
-    <p>choisi 2 personnages stp </p>
-       <button class="btn btn-danger"> <a href="./choose.php">retour au choix </a> </button>
+    
+    <div id="Choix_perso" class="" style="height: 700px; background-size: cover; background-repeat: no-repeat; background-image: url(./images/decors-jeu-combat-1212.gif);">
+    
+    <button style="text-align: center; color: white;" class="bouttonretour"> <a href="./choose.php">retour au choix des combattants</a> </button>
+    
+    <br>
+    <div style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;"><p >Choisissez 2 personnages</p></div>
+    <p style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;">pour combattre !</p>
+    
     </div>
 <?php die; } 
 
@@ -63,40 +69,39 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/combats_style.css">
 </head>
-<body>
+<body class="m-3 mt-5">
     
 
-    <section class="combats d-flex justify-content-evenly text-center">
+    <section id="bodynew" class="d-flex justify-content-evenly text-center">
 
-        <div class="case1 h-100 col-3">
+        <div class="col-3">
 
 
 
-            <div class="row h-50 align-items-center" > 
-                   <div class="" id="fight-hero"> </div>
+            <div class="row align-items-center" > 
+                   <div class="" id="fight-hero"></div>
             </div>
 
         
 
             <!-- COTER GENTIL -->
 
-            <div class="row h-50 align-items-center"> 
-                <div class="mb-5">
-                    <p class="fs-2 text-success fw-bold"><?=$hero->getName()?></p>
+            <div class="row"> 
+                <div class="">
+                    <p class="fs-2"><?=$hero->getName()?></p>
                     <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
       
             <!-- FAUSSE BARRE DE VIE  -->
 
-                <div id="lifebar"  class="row progress " role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHp()?>" aria-valuemin="0" aria-valuemax="100">
+                <div id="lifebar"  class="row progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHp()?>" aria-valuemin="0" aria-valuemax="100">
                     <div class="progress-bar bg-danger" style="width: ><?=$hero->getHp()?>"><?=$hero->getHp()?> PV</div>
                 </div>
 
                      <!-- boule de feu -->
-                     <img id="shuriken" class="shurikenHidden shurikenfilter" src="./images/<?=$hero->getWeapon()?>" alt="" width="150px"> 
+                     <img id="shuriken" class="shurikenHidden shurikenfilter border border-success" src="./images/<?=$hero->getWeapon()?>" alt="" width="150px"> 
                     <!-- boule de feu FIN  -->
-                        <div id="vie_Hero">
+                        <div id="vie_Hero"></div> 
 
-                        </div> 
                     </div>
                 </div>
             </div>
@@ -105,7 +110,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
             <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
 
-        <div class=" col-2 H-100 d-flex justify-content-center align-items-center">
+        <div class=" col-2 H-100 d-flex justify-content-center align-items-start m-5">
                 <button class=" text-white btn btn-danger" id="fight"
                     data-hero_id="<?=$hero->getId()?>"
 
@@ -123,18 +128,15 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
         
                 <!-- COTER MECHANT  -->
         
-               
-
-            <div class="row h-50 align-items-center" > 
-                   <div class="mt-2" id="fight-monster"> </div>
-
+            <div class="row h-50 align-items-end" > 
+                   <div class="" id="fight-monster"> </div>
             </div>
 
 
         <div class="row h-50  align-items-center"> 
                 <div class="">
 
-                    <p class="fs-2 fw-bold"><?=$Monster->getName()?></p>
+                    <p class="fs-2"><?=$Monster->getName()?></p>
                     <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
 
                      <!-- FAUSSE BARRE DE VIE  -->
@@ -146,12 +148,10 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
 
                     <!-- boule de feu -->
-                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="150px"> 
+                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="50px"> 
                     <!-- boule de feu FIN  -->
                        
-                        <div id="vie_Monster">
-                           
-                        </div>
+                        <div id="vie_Monster"></div>
 
                     </div>
                 </div>
@@ -159,8 +159,6 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
         </div>
 
     </section>
-
-
 
     <script src="./JS/script.js"></script>
 </body>

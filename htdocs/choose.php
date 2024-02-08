@@ -1,5 +1,6 @@
 <?php
 session_start();
+
 require_once './config/autoloader.php';
 // require_once "./config/debug.php";
 require_once "./config/db.php";
@@ -40,50 +41,52 @@ $players = $PlayerManager->getPlayer();
 
 <body class="d-flex justify-content-center">
 
-    <section class="container d-flex align-items-center">
+    <section class="container d-flex align-items-center justify-content-center">    
 
-        <div id="bloc_selection" class="col-12 row d-flex justify-content-center">
+        <div id="bloc_selection" class="col-11">
+            
+                    <form action="./combat.php" method="post" class=" col-12 d-flex justify-content-around">
+                     
+                    <!-- la div des heros-->
+                    <div class="d-flex flex-column">
 
-            <div class="container">
-
-
-                <div class="">
-                    <form action="./combat.php" method="post" class="d-flex justify-content-between">
-                        <div class="m-2 d-flex flex-column">
-
-                            <label class="mb-3" for="deadpool_radio">
-                                <input type="radio" id="deadpool_radio" name="hero_id" value="<?=$heros[0]->getId()?>"/>
-                                <img id="deadpool" src="./images/<?=$heros[0]->getURL()?>" alt="">
+                                
+                            <label class="" for="deadpool_radio">
+                                <input type="radio" id="deadpool_radio" name="hero_id" value="<?=$heros[3]->getId()?>"/>
+                                <img id="deadpool" src="./images/<?=$heros[3]->getURL()?>" alt="">
                             </label>
+                            
 
                             <label for="ironman_radio">
-                                <input type="radio" id="ironman_radio" name="hero_id" value="<?=$heros[1]->getId()?>" />
-                                <img id="ironman" src="./images/<?=$heros[1]->getURL()?>" width="200px" alt="">
+                                <input type="radio" id="ironman_radio" name="hero_id" value="<?=$heros[4]->getId()?>" />
+                                <img id="ironman" src="./images/<?=$heros[4]->getURL()?>" width="100px" alt="">
                             </label>
 
-                        </div>
+                    </div>
 
-                            <div>
-                                <button id="bouton_choose" class="mt-3 d-flex flex-column justify-content-center" type="submit"></button>
-
-                            </div>
-
-                        <div class="m-4 d-flex flex-column">
+                    <!-- la boutton de fight-->  
+                            <div class="col-3 d-flex align-items-center m-5">
+                                <button id="bouton_choose" class="" type="submit"></button>
+                            </div>  
                             
-                            <label class="mb-5" for="contactChoice5">
-                                <input type="radio" id="contactChoice5" name="monster_id" value="<?=$monsters[0]->getId()?>" />
-                                <img id="bowser" src="./images/<?=$monsters[0]->getImage()?>" width="200px" alt=""> 
+                                
+                    <!-- la div des mechants-->       
+                    <div class="d-flex flex-column">
+                            
+                            <label class="" for="contactChoice5">
+                                <input type="radio" id="contactChoice5" name="monster_id" value="<?=$monsters[1]->getId()?>" />
+                                <img id="bowser" src="./images/<?=$monsters[1]->getImage()?>" width="100px" alt=""> 
                             </label>
                             
-                            <label class="" for="tanos_radio">
-                                <input type="radio" id="tanos_radio" name="monster_id" value="<?=$monsters[1]->getId()?>" />
-                                <img id="tanos" src="./images/<?=$monsters[1]->getImage()?>" alt="">
+                            <label class="mt-5" for="tanos_radio">
+                                <input type="radio" id="tanos_radio" name="monster_id" value="<?=$monsters[0]->getId()?>" />
+                                <img id="tanos" src="./images/<?=$monsters[0]->getImage()?>" alt="">
                             </label>
                         </div>
 
                     </form>
-                </div>
-            </div>
+                
+            
         </div>
 
 
