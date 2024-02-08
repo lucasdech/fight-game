@@ -10,7 +10,7 @@ if (empty($_POST['hero_id']) && empty($_POST['monster_id'])) {
     
  ?>
     
-    <div id="Choix_perso" class="" style="height: 700px; background-size: cover; background-repeat: no-repeat; background-image: url(./images/decors-jeu-combat-1212.gif);">
+    <div id="Choix_perso" class="" style="height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url(./images/decors-jeu-combat-1212.gif);">
     
     <button style="text-align: center; color: white;" class="bouttonretour"> <a href="./choose.php">retour au choix des combattants</a> </button>
     
