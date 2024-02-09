@@ -5,21 +5,20 @@ require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
 
-    
-if (empty($_POST['hero_id']) && empty($_POST['monster_id'])) {
-    
- ?>
-    
-    <div id="Choix_perso" class="" style="height: 100%; background-size: cover; background-repeat: no-repeat; background-image: url(./images/decors-jeu-combat-1212.gif);">
-    
-    <button style="text-align: center; color: white;" class="bouttonretour"> <a href="./choose.php">retour au choix des combattants</a> </button>
-    
-    <br>
-    <div style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;"><p >Choisissez 2 personnages</p></div>
-    <p style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;">pour combattre !</p>
-    
-    </div>
-<?php die; } 
+    if ((empty($_POST['hero_id']) && empty($_POST['monster_id'])) || empty($_POST['hero_id']) || empty($_POST['monster_id'])) {
+    ?>
+        
+        <div id="Choix_perso" class="" style="height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: url(./images/decors-jeu-combat-1212.gif);">
+        
+        <button style="text-align: center; color: white;" class="bouttonretour"> <a href="./choose.php">retour au choix des combattants</a> </button>
+        
+        <br>
+        <div style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;"><p >Choisissez 2 personnages</p></div>
+        <p style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;">pour combattre !</p>
+        
+        </div>
+
+    <?php die; } 
 
 
 $SelectHeroID = new HeroesManager($connexion);
@@ -27,7 +26,6 @@ $hero = $SelectHeroID->getHeroByID($_POST['hero_id']) ;
 
 $SelectMonsterID = new MonstersManager($connexion);
 $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
-
 
 ?>
 
@@ -72,8 +70,9 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
       
             <!-- FAUSSE BARRE DE VIE  -->
 
-                <div id="lifebar"  class="row progress" role="progressbar" aria-label="Danger example" aria-valuenow="<?=$hero->getHp()?>" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar bg-danger" style="width: ><?=$hero->getHp()?>"><?=$hero->getHp()?> PV</div>
+                <div id="lifebar" >
+
+
                 </div>
 
                     
@@ -85,7 +84,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
             <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
 
-        <div class=" col-2 H-100 d-flex justify-content-center align-items-start m-5">
+        <div class=" col-2 H-100 d-flex justify-content-center align-items-center m-5 mb-5">
                 <button class=" text-white btn btn-danger" id="fight"
                     data-hero_id="<?=$hero->getId()?>"
 
@@ -94,6 +93,10 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
                 </button>
                 <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
+
+                <form action="./process/healFighters.php" class="bntFIN">
+                    <button type="submit">Suite</button>
+                </form>
        </div>
 
                         <!-- FIN DU BOUTTON ESSAIE  -->
@@ -116,8 +119,8 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
                      <!-- FAUSSE BARRE DE VIE  -->
                 <div>
-                    <div id="lifebar2" class="progress " role="progressbar" aria-label="Danger example" aria-valuenow="<?=$Monster->getHealth_points()?>" aria-valuemin="0" aria-valuemax="100">
-                            <div class="progress-bar bg-danger" style="width:<?=$Monster->getHealth_points()?>%"><?=$Monster->getHealth_points()?> PV</div>
+                    <div id="lifebar2">
+
                     </div>
                 </div>
 
