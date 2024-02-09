@@ -1,7 +1,7 @@
 <?php
 session_start();
 require_once './config/autoloader.php';
-// require_once "./config/debug.php";
+require_once "./config/debug.php";
 require_once "./config/db.php";
 include "./config/message.php";
 
@@ -27,34 +27,6 @@ $hero = $SelectHeroID->getHeroByID($_POST['hero_id']) ;
 
 $SelectMonsterID = new MonstersManager($connexion);
 $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
-
-// echo "<pre>";
-// var_dump($hero);
-// echo "</pre>";
-
-// echo "<pre>";
-// var_dump($hero->getHP());
-// echo "</pre>";
-
-// echo "<pre>";
-// var_dump($hero->getAttack());
-// echo "</pre>";
-
-
-
-// echo "<pre>";
-// var_dump($Monster);
-// echo "</pre>";
-
-// echo "<pre>";
-// var_dump($Monster->getHealth_points());
-// echo "</pre>";
-
-// echo "<pre>";
-// var_dump($Monster->getAttack());
-// echo "</pre>";
-
-
 
 
 ?>
