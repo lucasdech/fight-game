@@ -35,6 +35,12 @@ class MonstersManager {
 
     }
 
+    public function healMonsterLowHp()
+    {
+        $prepareRequest = $this->connexion->prepare('UPDATE boss SET health_points = 150');    
+        $prepareRequest->execute();  
+    }
+
     public function getMonsterByID($id){
 
         $ID_Monster_Select = $this->connexion->prepare('SELECT * FROM boss WHERE boss.id = ?');
@@ -49,7 +55,7 @@ class MonstersManager {
 
      public function update(Monster $monster){
 
-         $prepareRequest = $this->connexion->prepare('UPDATE monster SET health_points = ? WHERE id = ?');
+         $prepareRequest = $this->connexion->prepare('UPDATE boss SET health_points = ? WHERE id = ?');
          $prepareRequest->execute([
             $monster->getHealth_points(),
             $monster->getId()
