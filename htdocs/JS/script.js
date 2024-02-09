@@ -44,7 +44,7 @@ fight.addEventListener('click', function(){
                    return resp.json();
                  })
                  .then((data)=>{
-                    console.log(data.HPmonster);
+                    console.log(data);
 
                       // AFFICHER LES ETAPES DU COMBATS 
 
@@ -61,11 +61,7 @@ fight.addEventListener('click', function(){
 
                     // CACHER LES BARRES 
 
-                    let barresDeVie = document.querySelector('#lifebar')
-                    let barresDeVie2 = document.querySelector('#lifebar2')
-
-                      barresDeVie.classList.add("HIDDEN")
-                      barresDeVie2.classList.add("HIDDEN")
+                  
 
                     // FIN DE CACHER LES BARRES
 
@@ -77,17 +73,20 @@ fight.addEventListener('click', function(){
                     let vieMonster = document.querySelector('#vie_Monster')                  
                   
                     
-                    vieHero.innerHTML = ` <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="${hpHero}" aria-valuemin="0" aria-valuemax="${hpHero}">
-                    <div class="progress-bar bg-danger" style="width: ${coupMonster}%">${coupMonster} PV</div> `
+                    vieHero.innerHTML = ` <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="${data.HPhero[0]}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-danger" style="width: ${data.HPhero[0]}%">${data.HPhero[0]} PV</div> `
                     
                     
                     
-                    vieMonster.innerHTML  = ` <div class="w-auto progress" role="progressbar" aria-label="Danger example" aria-valuenow="${hpMonster}" aria-valuemin="0" aria-valuemax="${hpMonster}">
-                    <div class="progress-bar bg-danger" style="width: ${coupHero}%">${coupHero} PV</div> `
+                    vieMonster.innerHTML  = ` <div class="w-auto progress" role="progressbar" aria-label="Danger example" aria-valuenow="${data.HPmonster[0]}" aria-valuemin="0" aria-valuemax="150">
+                    <div class="progress-bar bg-danger" style="width: ${data.HPmonster[0]}%">${data.HPmonster[0]} PV</div> `
                     
                     
-                    if (data.HPhero <= 0 || data.HPmonster) {
-                       test.setAttribute("disable", true)
+                    if (data.HPhero[0] <= 0 || data.HPmonster[0] <= 0) {
+                       test.setAttribute("disabled", true)
+                       console.log("ppl");
+
+                       
                     }
                     
 
@@ -95,19 +94,3 @@ fight.addEventListener('click', function(){
                  })                
     })
 
-
-
-// let datavie = 100;
-// do {
-//   alert( jeux );
- 
-//   barre de vie - getattack;
-// } while ( vie est < 0);
-
-// const seuil = 14;
-// let compteur = 0;
-
-// while ((compteur = seuil)) {
-//   compteur++;
-//   /* Faire quelque chose avec compteur */
-// }

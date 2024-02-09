@@ -5,7 +5,6 @@ include "../config/db.php";
 
 if (!empty($_POST['hero_id']) && !empty($_POST['monster_id'])){
 
-
     $HeroesManager = new HeroesManager($connexion);
     $heros = $HeroesManager->getHeroByID($_POST['hero_id']);
 
@@ -15,8 +14,9 @@ if (!empty($_POST['hero_id']) && !empty($_POST['monster_id'])){
     $addfight2 = new CombatManager($connexion);
     $fight2 = $addfight2->fightAJAX($heros,$monsters);
 
-    // $HeroesManager->update($heros);
-    // $MonsterManager->update($monsters);
         
+    $HeroesManager->update($heros);
+    $MonstersManager->update($monsters);
+
     echo json_encode($fight2);
 }

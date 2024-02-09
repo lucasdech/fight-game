@@ -22,10 +22,6 @@ include "./config/message.php";
 </head>
  
 
-<form action="./process/logout.php">
-    <button class="btn btn-danger" type="submit"><p>deconnexion de session</p></button>
-
-</form> 
 
 <body id="fond">
 
@@ -51,6 +47,12 @@ include "./config/message.php";
                 <div class="row">
                     <button type="submit" class="btn btn-outline-light">START</button> 
                 </div>
+            </form>
+        </div> 
+        <div class="d-flex justify-content-center mt-2"> 
+            <form action="./process/logout.php">
+                <button class="btn btn-outline-light" type="submit"><p>deconnexion de session</p></button>
+                
             </form>
         </div>
 

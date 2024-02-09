@@ -52,19 +52,21 @@ $players = $PlayerManager->getPlayer();
 
                                 
                             <label class="" for="deadpool_radio">
-                                <input type="radio" id="deadpool_radio" name="hero_id" value="<?=$heros[3]->getId()?>"/>
-                                <img id="deadpool" src="./images/<?=$heros[3]->getURL()?>" alt="">
+                                <input type="radio" id="deadpool_radio" name="hero_id" value="<?=$heros[0]->getId()?>"/>
+                                <img id="deadpool" src="./images/<?=$heros[0]->getURL()?>" alt="">
                             </label>
                             
 
                             <label for="ironman_radio">
-                                <input type="radio" id="ironman_radio" name="hero_id" value="<?=$heros[4]->getId()?>" />
-                                <img id="ironman" src="./images/<?=$heros[4]->getURL()?>" width="100px" alt="">
+                                <input type="radio" id="ironman_radio" name="hero_id" value="<?=$heros[1]->getId()?>" />
+                                <img id="ironman" src="./images/<?=$heros[1]->getURL()?>" width="100px" alt="">
                             </label>
 
                     </div>
 
                     <!-- la boutton de fight-->  
+
+                        
                             <div class="col-3 d-flex align-items-center m-5">
                                 <button id="bouton_choose" class="" type="submit"></button>
                             </div>  

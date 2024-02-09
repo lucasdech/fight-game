@@ -50,14 +50,20 @@ class HeroesManager {
        
     }
 
+    public function healHeroLowHp()
+    {
+        $prepareRequest = $this->connexion->prepare('UPDATE heros SET health_points = 100');    
+        $prepareRequest->execute();  
+    }
+   
+    public function update(Hero $Heros){
 
-     // public function update(Monster $monster){
-
-    //     $prepareRequest = $this->$connexion->prepare('UPDATE monster SET health_points =  WHERE id = ?');
-    //     $prepareRequest->execute([
-            
-    //     ])
-    //  }
+        $prepareRequest = $this->connexion->prepare('UPDATE heros SET health_points = ? WHERE id = ?');
+        $prepareRequest->execute([
+           $Heros->getHP(),
+           $Heros->getId()
+        ]);
+    }
 
 }
 
