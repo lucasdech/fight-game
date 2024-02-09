@@ -86,9 +86,9 @@ fight.addEventListener('click', function(){
                     <div class="progress-bar bg-danger" style="width: ${coupHero}%">${coupHero} PV</div> `
                     
                     
-                    // if (data.HPhero <= 0 || data.HPmonster) {
-                    //    test.setAttribute("disable", true)
-                    // }
+                    if (data.HPhero <= 0 || data.HPmonster) {
+                       test.setAttribute("disable", true)
+                    }
                     
 
 

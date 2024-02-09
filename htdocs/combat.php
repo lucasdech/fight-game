@@ -86,10 +86,17 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
             <!-- COTER GENTIL -->
 
+             <!-- boule de feu -->
+             <img id="shuriken" class="z-1 shurikenHidden shurikenfilter" src="./images/<?=$hero->getWeapon()?>" alt="" width="90px"> 
+                    <!-- boule de feu FIN  -->
+                        <div id="vie_Hero"></div> 
+
+
+
             <div class="row"> 
                 <div class="">
                     <p class="fs-2"><?=$hero->getName()?></p>
-                    <img class="" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
+                    <img class="z-3" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
       
             <!-- FAUSSE BARRE DE VIE  -->
 
@@ -97,11 +104,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
                     <div class="progress-bar bg-danger" style="width: ><?=$hero->getHp()?>"><?=$hero->getHp()?> PV</div>
                 </div>
 
-                     <!-- boule de feu -->
-                     <img id="shuriken" class="shurikenHidden shurikenfilter border border-success" src="./images/<?=$hero->getWeapon()?>" alt="" width="150px"> 
-                    <!-- boule de feu FIN  -->
-                        <div id="vie_Hero"></div> 
-
+                    
                     </div>
                 </div>
             </div>

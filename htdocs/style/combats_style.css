@@ -21,6 +21,7 @@ body {
 }
 
 #hero {
+    z-index: 2;
     width : 400px;
     height : 400px;
     filter: drop-shadow(5px 5px 30px rgb(10, 234, 47));
@@ -48,14 +49,14 @@ body {
 
 .fireBall {
 
-    top: 650px;
-    right: 500px;
+    top: 250px;
+    right: 550px;
     position: absolute;
     animation-name: drive, turn;
-    animation-duration: 1.5s;
+    animation-duration: 1.4s;
     animation-direction: normal;
     animation-fill-mode: backwards;
-    animation-delay: 0s;
+    animation-delay: 1s;
     animation-timing-function: linear;
     animation-iteration-count: 1;
 }
@@ -83,7 +84,6 @@ body {
 }
 
 
-
 /* ANIMATION COUP DE POING */
 
 
@@ -98,16 +98,17 @@ body {
 
 .shuriken {
 
-   top: 650px;
-   left: 500px;
+   z-index: 3;
+   top:270px;
+   left: 290px;
    position: absolute;
    animation-name: ok, turn;
    animation-duration: 1.5s;
    animation-direction: normal;
-   animation-fill-mode: backwards;
+   /* animation-fill-mode: backwards; */
    animation-delay: 1.5s;
-   animation-timing-function: linear;
-   animation-iteration-count: 1;
+   animation-timing-function:cubic-bezier(0.165, 0.84, 0.44, 1);
+   /* animation-iteration-count: 1; */
 }
 
 
