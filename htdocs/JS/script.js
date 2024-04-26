@@ -44,7 +44,7 @@ fight.addEventListener('click', function(){
                    return resp.json();
                  })
                  .then((data)=>{
-                    console.log(data);
+                    
 
                       // AFFICHER LES ETAPES DU COMBATS 
 
@@ -57,15 +57,8 @@ fight.addEventListener('click', function(){
                       // FIN ETAPES DE COMBATS
 
 
-                      // DEBUT GESTIONS DES BARRES DE VIE HERO ET MONSTER
-
-                    // CACHER LES BARRES 
-
-                  
-
-                    // FIN DE CACHER LES BARRES
-
-                  
+                        // DEBUT GESTIONS DES BARRES DE VIE HERO ET MONSTER
+          
 
                     // RENDRE LA BARRE DE VIE INTERACTIVE 
 
@@ -84,13 +77,9 @@ fight.addEventListener('click', function(){
                     
                     if (data.HPhero[0] <= 0 || data.HPmonster[0] <= 0) {
                        test.setAttribute("disabled", true)
-                       console.log("ppl");
-
-                       
+                       console.log("ppl");                    
                     }
                     
-
-
                  })                
     })
 

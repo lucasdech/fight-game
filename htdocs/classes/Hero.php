@@ -68,4 +68,5 @@ class Hero {
     public function setWeapon($weapon) {
         $this->weapon = $weapon;
     }
+    
 }

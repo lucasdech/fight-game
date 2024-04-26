@@ -16,10 +16,8 @@ $monsters = $MonstersManager->getmonster();
 $PlayerManager = new PlayersManager($connexion);
 $players = $PlayerManager->getPlayer();
 
-
+// var_dump($heros)
 ?>
-
-
 
 <!DOCTYPE html>
 <html lang="en">
