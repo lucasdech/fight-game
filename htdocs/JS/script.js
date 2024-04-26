@@ -1,16 +1,30 @@
+// Cette ligne sélectionne un élément HTML avec l'identifiant "fight" et le stocke dans la variable "fight".
 let fight = document.querySelector('#fight')
 
+
+// Cela ajoute un écouteur d'événements au clic sur l'élément sélectionné précédemment ("fight").
+// Lorsque cet élément est cliqué, la fonction anonyme qui suit sera exécutée.
 fight.addEventListener('click', function(){
 
-    document.querySelector('#coupDePoing').play()
-    
+  // Ceci sélectionne un élément HTML avec l'identifiant "coupDePoing" et joue le son associé.
+  document.querySelector('#coupDePoing').play()
+  
+  // Cela sélectionne un élément HTML avec l'identifiant "fireBall" et accède à sa liste de classes CSS.
     let fireBall = document.querySelector('#fireBall').classList
 
+    // Ces lignes alternent entre l'ajout et la suppression des classes CSS "fireBallHidden" et
+    // "fireBall" sur l'élément sélectionné précédemment. Cela permet de changer l'apparence de l'élément.
     fireBall.toggle("fireBallHidden")
     fireBall.toggle("fireBall")
 
+
+// De manière similaire à la ligne précédente, cela sélectionne un 
+// élément HTML avec l'identifiant "shuriken" et accède à sa liste de classes CSS.
     let shuriken = document.querySelector('#shuriken').classList
    
+
+    // Comme précédemment, ces lignes alternent entre l'ajout et la suppression des classes CSS
+    //  "shurikenHidden" et "shuriken" sur l'élément sélectionné, modifiant ainsi son apparence.
     shuriken.toggle("shurikenHidden")
     shuriken.toggle("shuriken")
 
@@ -20,29 +34,46 @@ fight.addEventListener('click', function(){
 
     // AJAX FORM DATA POUR PASSER L'ID DU HERO
 
-
+    // ette ligne sélectionne un élément HTML avec l'identifiant "fight" et le stocke dans la variable "test".
   let test = document.querySelector('#fight')
 
+
+  // Cela ajoute un écouteur d'événements au clic sur l'élément sélectionné précédemment ("test"). 
+  // Lorsque cet élément est cliqué, la fonction anonyme qui suit sera exécutée.
       test.addEventListener('click', function(){
 
+        // Cela crée un nouvel objet FormData, qui est utilisé pour envoyer
+        // des données sous forme de paires clé/valeur à un serveur sous forme de formulaire.
             let formData = new FormData();
                     
+            // Ces lignes extraient les valeurs des attributs "data-hero_id" et "data-monster_id"
+            // de l'élément "test" et les stockent dans les variables "hero_id" et "monster_id"
+            // respectivement. Ces attributs "data-" contiennent des données personnalisées associées à l'élément HTML.
             let hero_id =  test.dataset.hero_id
             let monster_id =  test.dataset.monster_id
 
-
+            // Ces lignes ajoutent les valeurs extraites précédemment ("hero_id" et "monster_id")
+            // à l'objet FormData, avec les clés "hero_id" et "monster_id".
             formData.append("hero_id", hero_id);
             formData.append("monster_id", monster_id);
             
-
+            
+            
+            // Cette ligne effectue une requête fetch vers le fichier "fight_AJAX.php" situé dans le répertoire "process"
+            // de votre serveur. Les données envoyées sont les données stockées dans l'objet FormData, envoyées avec la méthode HTTP POST.
                fetch("./process/fight_AJAX.php", {
                  method : "post",
                  body : formData
                })
 
+              //  Cette méthode "then" de la Promesse (Promise) traite la réponse de la requête
+              //  fetch en la convertissant en format JSON.
                .then((resp)=>{
                    return resp.json();
                  })
+
+                //  Une fois que la réponse a été convertie en JSON, cette partie du code est exécutée.
+                //  Elle affiche les données de la réponse dans la console du navigateur.
                  .then((data)=>{
                     console.log(data);
 
@@ -84,7 +115,7 @@ fight.addEventListener('click', function(){
                     
                     if (data.HPhero[0] <= 0 || data.HPmonster[0] <= 0) {
                        test.setAttribute("disabled", true)
-                       console.log("ppl");
+                      //  console.log("ppl");
 
                        
                     }
