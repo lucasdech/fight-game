@@ -21,35 +21,27 @@ fight.addEventListener('click', function(){
     // AJAX FORM DATA POUR PASSER L'ID DU HERO
 
 
-  let test = document.querySelector('#fight')
+  let btnfight = document.querySelector('#fight')
 
-      test.addEventListener('click', function(){
+      btnfight.addEventListener('click', function(){
 
-            let formData = new FormData();
-                    
-            let hero_id =  test.dataset.hero_id
-            let monster_id =  test.dataset.monster_id
+            let hero_id = btnfight.dataset.heroid
+            let monster_id = btnfight.dataset.monsterid
 
-
-            formData.append("hero_id", hero_id);
-            formData.append("monster_id", monster_id);
-            
+            // console.log(hero_id)
+            // console.log(monster_id)
 
                fetch("./process/fight_AJAX.php", {
-                 method : "post",
-                 body : [
-                     hero_id,
-                     monster_id,
-                 ]
+                 method: "POST",
+                 body: 
+                    JSON.stringify({heroID: hero_id, monsterID: monster_id})
                })
-
-               .then((resp)=>{
-                console.log(resp.json())
-                   return resp.json();
+               .then((res)=>{
+                   return res.json()
                  })
                  .then((data)=>{
-                    
-
+                  
+                  console.log(data)
                       // AFFICHER LES ETAPES DU COMBATS 
 
                     let appendHero = document.querySelector('#fight-hero');
@@ -66,24 +58,13 @@ fight.addEventListener('click', function(){
 
                     // RENDRE LA BARRE DE VIE INTERACTIVE 
 
-                    let vieHero = document.querySelector('#lifebar')
-                    let vieMonster = document.querySelector('#lifebar2')          
+                    // let vieHero = document.querySelector('#lifebar')
+                    // let vieMonster = document.querySelector('#lifebar2')          
 
-                    console.log(vieHero)        
-                  
-                    
-                    vieHero.innerHTML = ` <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="${data.HPhero[0]}" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar bg-danger" style="width: ${data.HPhero[0]}%">${data.HPhero[0]} PV</div> `
-                    
-                    
-                    
-                    vieMonster.innerHTML  = ` <div class="w-auto progress" role="progressbar" aria-label="Danger example" aria-valuenow="${data.HPmonster[0]}" aria-valuemin="0" aria-valuemax="150">
-                    <div class="progress-bar bg-danger" style="width: ${data.HPmonster[0]}%">${data.HPmonster[0]} PV</div> `
                     
                     
                     if (data.HPhero[0] <= 0 || data.HPmonster[0] <= 0) {
-                       test.setAttribute("disabled", true)
-                       console.log("ppl");                    
+                       btnfight.setAttribute("disabled", true)
                     }
                     
                  })                

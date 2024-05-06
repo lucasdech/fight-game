@@ -5,24 +5,28 @@ require_once './config/autoloader.php';
 require_once "./config/db.php";
 include "./config/message.php";
 
-    if ((empty($_POST['hero_id']) && empty($_POST['monster_id'])) || empty($_POST['hero_id']) || empty($_POST['monster_id'])) {
-    ?>
-        
-        <div id="Choix_perso" class="" style="height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: url(./images/decors-jeu-combat-1212.gif);">
-        
-        <button style="text-align: center; color: white;" class="bouttonretour"> <a href="./choose.php">retour au choix des combattants</a> </button>
-        
-        <br>
-        <div style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;"><p >Choisissez 2 personnages</p></div>
-        <p style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;">pour combattre !</p>
-        
-        </div>
+if ((empty($_POST['hero_id']) && empty($_POST['monster_id'])) || empty($_POST['hero_id']) || empty($_POST['monster_id'])) {
+?>
 
-    <?php die; } 
+    <div id="Choix_perso" class="" style="height: 100vh; background-size: cover; background-repeat: no-repeat; background-image: url(./images/decors-jeu-combat-1212.gif);">
+
+        <button style="text-align: center; color: white;" class="bouttonretour"> <a href="./choose.php">retour au choix des combattants</a> </button>
+
+        <br>
+        <div style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;">
+            <p>Choisissez 2 personnages</p>
+        </div>
+        <p style="color: white; font-family: 'Protest Guerrilla', sans-serif; font-size: 30pt; text-align: center;">pour combattre !</p>
+
+    </div>
+
+<?php die;
+}
+
 
 
 $SelectHeroID = new HeroesManager($connexion);
-$hero = $SelectHeroID->getHeroByID($_POST['hero_id']) ;
+$hero = $SelectHeroID->getHeroByID($_POST['hero_id']);
 
 $SelectMonsterID = new MonstersManager($connexion);
 $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
@@ -31,6 +35,7 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
@@ -39,8 +44,10 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
     <link rel="stylesheet" href="./style/combats_style.css">
 </head>
+
 <body class="m-3 mt-5">
-    
+
+
 
     <section id="bodynew" class="d-flex justify-content-evenly text-center">
 
@@ -48,96 +55,93 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
 
 
-            <div class="row align-items-center" > 
-                   <div class="" id="fight-hero"></div>
+            <div class="row align-items-center">
+                <div class="" id="fight-hero"></div>
             </div>
 
-        
+
 
             <!-- COTER GENTIL -->
 
-             <!-- boule de feu -->
-             <img id="shuriken" class="z-1 shurikenHidden shurikenfilter" src="./images/<?=$hero->getWeapon()?>" alt="" width="90px"> 
-                    <!-- boule de feu FIN  -->
-                        <div id="vie_Hero"></div> 
+            <!-- boule de feu -->
+            <img id="shuriken" class="z-1 shurikenHidden shurikenfilter" src="./images/<?= $hero->getWeapon() ?>" alt="" width="90px">
+            <!-- boule de feu FIN  -->
 
-
-
-            <div class="row"> 
+            <div class="row">
                 <div class="">
-                    <p class="fs-2"><?=$hero->getName()?></p>
-                    <img class="z-3" id="hero" src="./images/<?=$hero->getURL()?>" width="300px">
-      
-            <!-- FAUSSE BARRE DE VIE  -->
+                    <p class="fs-2"><?= $hero->getName() ?></p>
+                    <img class="z-3" id="hero" src="./images/<?= $hero->getURL() ?>" width="300px">
 
-                <div id="lifebar" >
+                    <!-- FAUSSE BARRE DE VIE  -->
 
+                    <div id="lifebar">
 
-                </div>
+                        <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="${data.HPhero[0]}" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-danger" style="width: 100%">HERO PV</div> 
 
-                    
                     </div>
+
+
                 </div>
             </div>
         </div>
+        </div>
 
 
-            <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
+        <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
 
         <div class=" col-2 H-100 d-flex justify-content-center align-items-center m-5 mb-5">
-                <button class=" text-white btn btn-danger" id="fight"
-                    data-hero_id="<?=$hero->getId()?>"
+            <button class=" text-white btn btn-danger" id="fight" data-heroID="<?= $hero->getId() ?>" data-monsterID="<?= $Monster->getId() ?>"></button>
+            <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
 
-                    data-monster_id="<?=$Monster->getId()?>"
-                    >
+            <form action="./process/healFighters.php" class="bntFIN">
+                <button type="submit">Suite</button>
+            </form>
+        </div>
 
-                </button>
-                <audio id="coupDePoing" src="./sons/SF-coupoing.mp3"></audio>
+        <!-- FIN DU BOUTTON ESSAIE  -->
 
-                <form action="./process/healFighters.php" class="bntFIN">
-                    <button type="submit">Suite</button>
-                </form>
-       </div>
+        <div class="case1 h-100 col-3">
 
-                        <!-- FIN DU BOUTTON ESSAIE  -->
 
-            <div class="case1 h-100 col-3">
+            <!-- COTER MECHANT  -->
 
-        
-                <!-- COTER MECHANT  -->
-        
-            <div class="row h-50 align-items-end" > 
-                   <div class="" id="fight-monster"> </div>
+            <div class="row h-50 align-items-end">
+                <div class="" id="fight-monster"> </div>
             </div>
 
 
-        <div class="row h-50  align-items-center"> 
+            <div class="row h-50  align-items-center">
                 <div class="">
 
-                    <p class="fs-2"><?=$Monster->getName()?></p>
-                    <img id="mechant_combat" src="./images/<?=$Monster->getImage()?>">
+                    <p class="fs-2"><?= $Monster->getName() ?></p>
+                    <img id="mechant_combat" src="./images/<?= $Monster->getImage() ?>">
 
-                     <!-- FAUSSE BARRE DE VIE  -->
-                <div>
-                    <div id="lifebar2">
+                    <!-- FAUSSE BARRE DE VIE  -->
+                    <div>
+                        <div id="lifebar2">
 
+                            <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
+                    <div class="progress-bar bg-danger" style="width: 100%">mechant PV</div> 
+
+                        </div>
                     </div>
-                </div>
 
 
                     <!-- boule de feu -->
-                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?=$Monster->getWeapon()?>" alt="" width="50px"> 
+                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?= $Monster->getWeapon() ?>" alt="" width="50px">
                     <!-- boule de feu FIN  -->
-                       
-                        <div id="vie_Monster"></div>
 
-                    </div>
+                    <div id="vie_Monster"></div>
+
                 </div>
             </div>
+        </div>
         </div>
 
     </section>
 
     <script src="./JS/script.js"></script>
 </body>
+
 </html>
