@@ -6,9 +6,6 @@ include "../config/db.php";
 $HeroHPNEW = new HeroesManager($connexion);
 $HeroHPNEW->healHeroLowHp();
 
-
-
-
 $MonsterHPNEW = new MonstersManager($connexion);
 $MonsterHPNEW->healMonsterLowHp();
 

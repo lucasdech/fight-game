@@ -115,8 +115,7 @@ body {
 #fight-monster {
 
 color:#188396;
-font-size: 2rem;
-
+font-size: 1.5rem;
 }
 
 #fight-hero {
@@ -124,7 +123,6 @@ font-size: 2rem;
     font-family: 'VT323', monospace;
     color:rgb(24, 131, 150);
     font-size: 2rem;
-    
     }
 
 @keyframes ok {

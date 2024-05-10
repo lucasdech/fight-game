@@ -9,4 +9,3 @@ $connexion = new PDO('mysql:host=127.0.0.1;dbname=fightGame;charset=utf8','root'
 catch (Exception $message){
      echo "La connexion a la base de données n'est pas bonne !" ;
 }
-?>

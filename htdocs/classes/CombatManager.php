@@ -27,9 +27,6 @@ class CombatManager {
         return $fight;
     }
 
-
-    
-
     public function fightAJAX(Hero $Hero, Monster $Monster)
     {
         $fight2 = [
@@ -53,7 +50,6 @@ class CombatManager {
         array_push($fight2['hitMONSTER'], $Monster->getAttack());
         array_push($fight2['HPmonster'], $Monster->getHealth_points());
 
-            
      return $fight2;
     }
 
