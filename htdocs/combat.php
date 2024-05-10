@@ -55,12 +55,6 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
 
 
-            <div class="row align-items-center">
-                <div class="" id="fight-hero"></div>
-            </div>
-
-
-
             <!-- COTER GENTIL -->
 
             <!-- boule de feu -->
@@ -74,18 +68,19 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
                     <!-- FAUSSE BARRE DE VIE  -->
 
-                    <div id="lifebar">
 
-                        <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="${data.HPhero[0]}" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar bg-danger" style="width: 100%">HERO PV</div> 
-
+                    <!-- happening de combat ici -->
+                    <div class="row align-items-center boiteDialogue">
+                        <div class="" id="fight-hero"></div>
                     </div>
-
-
                 </div>
             </div>
+
+        <div id="lifebar"> </div>
+        
         </div>
-        </div>
+
+
 
 
         <!-- BOUTON A NE PAS SUPRIMER POUR LES ESSAIES DATA ATTRIBUT  -->
@@ -106,37 +101,30 @@ $Monster = $SelectMonsterID->getMonsterByID($_POST['monster_id']);
 
             <!-- COTER MECHANT  -->
 
-            <div class="row h-50 align-items-end">
-                <div class="" id="fight-monster"> </div>
-            </div>
 
 
             <div class="row h-50  align-items-center">
                 <div class="">
-
                     <p class="fs-2"><?= $Monster->getName() ?></p>
                     <img id="mechant_combat" src="./images/<?= $Monster->getImage() ?>">
 
                     <!-- FAUSSE BARRE DE VIE  -->
                     <div>
-                        <div id="lifebar2">
-
-                            <div class="progress" role="progressbar" aria-label="Danger example" aria-valuenow="100" aria-valuemin="0" aria-valuemax="100">
-                    <div class="progress-bar bg-danger" style="width: 100%">mechant PV</div> 
-
+                        <!-- boule de feu -->
+                        <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?= $Monster->getWeapon() ?>" alt="" width="50px">
+                        <!-- boule de feu FIN  -->
+                        <div id="vie_Monster"></div>
+                        <!-- happening de combat ici -->
+                        <div class="row h-50 align-items-end boiteDialogue">
+                            <div class="" id="fight-monster"> </div>
                         </div>
                     </div>
-
-
-                    <!-- boule de feu -->
-                    <img id="fireBall" class="fireBallHidden fireBallfilter" src="./images/<?= $Monster->getWeapon() ?>" alt="" width="50px">
-                    <!-- boule de feu FIN  -->
-
-                    <div id="vie_Monster"></div>
-
                 </div>
             </div>
-        </div>
+
+                        <div id="lifebar2"> </div>
+
+
         </div>
 
     </section>
